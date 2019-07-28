@@ -7,7 +7,6 @@ package com.gphipps.fletcherpratt;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
@@ -41,6 +40,10 @@ public class CSVReader {
 
   private File outputDirectory;
 
+  /**
+   *  Reads a CSV file full of ship definitions and prints their logs.
+   *  The inner loop that does the work.
+   */
   public void processFile(String fleetInputFileName, String outputDirectoryName ) {
     InputStreamReader reader = null;
 
@@ -76,8 +79,10 @@ public class CSVReader {
         lineNumber++;
         String[] sections = line.split(",");
         String s = stripQuotes(sections[0]);
+        // The inner loop that does all the work. Read a ship, write out the log
         if (!s.equals("Name")) {
-          processLine(sections);
+          Ship ship = readShip(sections);
+          ship.createShipLog(new HTMLOutput( getOutputDirectory().getPath() + File.separatorChar + ship.getName()));
         }
       }
     } catch (Exception ex) {
@@ -86,10 +91,15 @@ public class CSVReader {
     }
 
     System.out.println("Load finished, number lines processed: " + lineNumber);
-
   }
 
-  private void processLine(String[] sections) throws FileNotFoundException, IOException {
+  /**
+   * Reads a ship, creates it.
+   *
+   * @param sections
+   * @throws IOException
+   */
+  private Ship readShip( String[] sections) throws IOException {
 
     Ship theShip = new Ship(stripQuotes(sections[NAME]), stripQuotes(sections[CLASS]), toInt(sections[LAUNCHED]), toInt(sections[REBUILT]));
 
@@ -111,7 +121,7 @@ public class CSVReader {
       theShip.setNotes(sections[NOTES].replaceAll("\"", ""));
     }
 
-    theShip.createShipLog(new HTMLOutput( getOutputDirectory().getPath() + File.separatorChar + theShip.getName()));
+    return theShip;
   }
 
   private String stripQuotes( String s ) {
@@ -132,18 +142,15 @@ public class CSVReader {
    * Second argument is path to output directory
    * @param args
    */
-
   public static void main(String args[]) {
     CSVReader reader = new CSVReader();
 
     reader.processFile(args[0], args[1]);
   }
 
-
   public File getOutputDirectory() {
     return outputDirectory;
   }
-
 
   public void setOutputDirectory(File outputDirectory) {
     this.outputDirectory = outputDirectory;
