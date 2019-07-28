@@ -1,0 +1,20 @@
+"Name","Class","Launched","Rebuilt","Nationality","Type","Primary Number","Primary Bore","Secondary Number","Secondary Bore","Torpedo Tubes","Belt","Deck","Turret","Mines","Aircraft","Speed","Tonnage","Torpedo Class","Main Turrets","Notes"
+"Kaiser","Kaiser",1912,1912,"German","Battleship",10,12,14,5.9,5,14,4,12,0,0,21,24724,"D","A PwQw XY","One bow TT"
+"Friedrich der Große","Kaiser",1912,1912,"German","Battleship",10,12,14,5.9,5,14,4,12,0,0,21,24724,"D","A PwQw XY","One bow TT"
+"Kaiserin","Kaiser",1912,1912,"German","Battleship",10,12,14,5.9,5,14,4,12,0,0,21,24724,"D","A PwQw XY","One bow TT"
+"Prinzregent Luitpold","Kaiser",1912,1912,"German","Battleship",10,12,14,5.9,5,14,4,12,0,0,21,24724,"D","A PwQw XY","One bow TT"
+"König Albert","Kaiser",1912,1912,"German","Battleship",10,12,14,5.9,5,14,4,12,0,0,21,24724,"D","A PwQw XY","One bow TT"
+"Helgoland","Helgoland",1912,1912,"German","Battleship",12,12,14,5.9,6,12,2.5,12,0,0,20,22448,"D","A PsQsRsSs XY",
+"Oldenburg","Helgoland",1912,1912,"German","Battleship",12,12,14,5.9,6,12,2.5,12,0,0,20,22448,"D","A PsQsRsSs XY",
+"Ostfriesland","Helgoland",1912,1912,"German","Battleship",12,12,14,5.9,6,12,2.5,12,0,0,20,22448,"D","A PsQsRsSs XY",
+"Thüringen","Helgoland",1912,1912,"German","Battleship",12,12,14,5.9,6,12,2.5,12,0,0,20,22448,"D","A PsQsRsSs XY",
+"König","König",1912,1912,"German","Battleship",10,12,14,5.9,5,14,12,1.2,0,0,21,25390,"D","AB Q XY","One bow TT"
+"Großer Kurfürst","König",1912,1912,"German","Battleship",10,12,14,5.9,5,14,12,1.2,0,0,21,25390,"D","AB Q XY","One bow TT"
+"Markgraf","König",1912,1912,"German","Battleship",10,12,14,5.9,5,14,12,1.2,0,0,21,25390,"D","AB Q XY","One bow TT"
+"Kronprinz","König",1912,1912,"German","Battleship",10,12,14,5.9,5,14,12,1.2,0,0,21,25390,"D","AB Q XY","One bow TT"
+"Bayern","Bayern",1915,1915,"German","Battleship",8,15,16,5.9,5,14,4,12,0,0,22,32200,"E","AB XY","One bow TT"
+"Baden","Bayern",1915,1915,"German","Battleship",8,15,16,5.9,5,14,4,12,0,0,22,32200,"E","AB XY","One bow TT"
+"Von der Tann","Von der Tann",1909,1909,"German","Battlecruiser",8,11,10,5.9,4,9.8,2,9.1,0,0,27,19370,"D","A Pw Qw Y",
+"Derfflinger","Derfflinger",1913,1913,"German","Battlecruiser",8,12,12,5.9,4,12,1.2,11,0,0,27,25770,"D","AB XY",
+"Lützow","Derfflinger",1913,1913,"German","Battlecruiser",8,12,12,5.9,4,12,1.2,11,0,0,27,25770,"D","AB XY",
+"Hindenberg","Derfflinger",1913,1913,"German","Battlecruiser",8,12,12,5.9,4,12,1.2,11,0,0,27,25770,"D","AB XY",

@@ -1,0 +1,34 @@
+"Name","Class","Launched","Rebuilt","Nationality","Type","Primary Number","Primary Bore","Secondary Number","Secondary Bore","Torpedo Tubes","Belt","Deck","Turret","Mines","Aircraft","Speed","Tonnage","Torpedo Class","Main Turrets","Notes"
+"Minotaur","Minotaur",1908,1908,"British","Armoured Cruiser",4,9.2,10,7.5,5,6,1.5,8,0,0,23,14600,"C","A Y","Submerged tubes"
+"Shannon","Minotaur",1908,1908,"British","Armoured Cruiser",4,9.2,10,7.5,5,6,1.5,8,0,0,23,14600,"C","A Y","Submerged tubes"
+"Defence","Minotaur",1909,1909,"British","Armoured Cruiser",4,9.2,10,7.5,5,6,1.5,8,0,0,23,14600,"C","A Y","Submerged tubes"
+"Bristol","Bristol",1910,1910,"British","Light Cruiser",2,6,10,4,2,3,2,0,0,0,25,5300,"C","A Y",
+"Glasgow","Bristol",1910,1910,"British","Light Cruiser",2,6,10,4,2,3,2,0,0,0,25,5300,"C","A Y",
+"Gloucester","Bristol",1910,1910,"British","Light Cruiser",2,6,10,4,2,3,2,0,0,0,25,5300,"C","A Y",
+"Liverpool","Bristol",1910,1910,"British","Light Cruiser",2,6,10,4,2,3,2,0,0,0,25,5300,"C","A Y",
+"Newcastle","Bristol",1910,1910,"British","Light Cruiser",2,6,10,4,2,3,2,0,0,0,25,5300,"C","A Y",
+"Weymouth","Weymouth",1911,1911,"British","Light Cruiser",8,6,0,0,2,3,2,0,0,0,25,5300,"C","A Y",
+"Yarmouth","Weymouth",1911,1911,"British","Light Cruiser",8,6,0,0,2,3,2,0,0,0,25,5300,"C","A Y",
+"Dartmouth","Weymouth",1911,1911,"British","Light Cruiser",8,6,0,0,2,3,2,0,0,0,25,5300,"C","A Y",
+"Falmouth","Weymouth",1911,1911,"British","Light Cruiser",8,6,0,0,2,3,2,0,0,0,25,5300,"C","A Y","Belt was machinery only"
+"Chatham","Chatham",1912,1912,"British","Light Cruiser",8,6,0,0,2,3,1,0,0,0,25,5300,"C","ABCD WXYZ",
+"Dublin","Chatham",1913,1913,"British","Light Cruiser",8,6,0,0,2,3,1,0,0,0,25,5300,"C","ABCD WXYZ",
+"Southampton","Chatham",1912,1912,"British","Light Cruiser",8,6,0,0,2,3,1,0,0,0,25,5300,"C","ABCD WXYZ",
+"Sydney","Chatham",1913,1913,"British","Light Cruiser",8,6,0,0,2,3,1,0,0,0,25,5300,"C","ABCD WXYZ",
+"Melbourne","Chatham",1913,1913,"British","Light Cruiser",8,6,0,0,2,3,1,0,0,0,25,5300,"C","ABCD WXYZ",
+"Brisbane","Chatham",1916,1916,"British","Light Cruiser",8,6,0,0,2,3,1,0,0,0,25,5300,"C","ABCD WXYZ",
+"Cambrian","C (Cambrian)",1914,1916,"British","Light Cruiser",4,6,0,0,4,3,1,0,0,0,29,4320,"C","AB XY","2 TT/side"
+"Cambrian","C (Cambrian)",1914,1917,"British","Light Cruiser",5,6,0,0,4,3,1,0,0,0,29,4320,"C","AB XY","2 TT/side"
+"Canterbury","C (Cambrian)",1914,1916,"British","Light Cruiser",4,6,0,0,4,3,1,0,0,0,29,4320,"C","AB XY","2 TT/side"
+"Castor","C (Cambrian)",1914,1915,"British","Light Cruiser",4,6,0,0,4,3,1,0,0,0,29,4320,"C","AB XY","2 TT/side"
+"Constance","C (Cambrian)",1914,1916,"British","Light Cruiser",4,6,0,0,4,3,1,0,0,0,29,4320,"C","AB XY","2 TT/side"
+"Arethusa","C (Arethusa)",1914,1914,"British","Light Cruiser",2,6,6,4,4,3,1,0,0,0,29,3500,"C","AB XY","2 TT/side"
+"Aurora","C (Arethusa)",1914,1914,"British","Light Cruiser",2,6,6,4,4,3,1,0,0,0,29,3500,"C","AB XY","2 TT/side"
+"Galatea","C (Arethusa)",1914,1914,"British","Light Cruiser",2,6,6,4,4,3,1,0,0,0,29,3500,"C","AB XY","2 TT/side"
+"Inconstant","C (Arethusa)",1914,1915,"British","Light Cruiser",2,6,6,4,4,3,1,0,0,0,29,3500,"C","AB XY","2 TT/side"
+"Penelope","C (Arethusa)",1914,1915,"British","Light Cruiser",2,6,6,4,4,3,1,0,0,0,29,3500,"C","AB XY","2 TT/side"
+"Phaeton","C (Arethusa)",1914,1915,"British","Light Cruiser",2,6,6,4,4,3,1,0,0,0,29,3500,"C","AB XY","2 TT/side"
+"Royalist","C (Arethusa)",1914,1915,"British","Light Cruiser",2,6,6,4,4,3,1,0,0,0,29,3500,"C","AB XY","2 TT/side"
+"Undaunted","C (Arethusa)",1914,1915,"British","Light Cruiser",2,6,6,4,4,3,1,0,0,0,29,3500,"C","AB XY","2 TT/side"
+"Centaur","C (Centaur)",1916,1915,"British","Light Cruiser",5,6,0,0,2,3,1,0,0,0,29,4165,"C","AB Q XY","1 submerged TT/side"
+"Concord","C (Centaur)",1916,1915,"British","Light Cruiser",5,6,0,0,2,3,1,0,0,0,29,4165,"C","AB Q XY","1 submerged TT/side"
