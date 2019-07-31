@@ -18,7 +18,7 @@ public class TorpedoTubes extends Reducing {
   }
 
   protected String getStatusStringInternal(int i) {
-    if (this == nullTorpedoTubes) {
+    if (this == nullTorpedoTubes || this.getTotalCount() == 0) {
       return "";
     } else {
       return String.valueOf(i) + " x " + getDescription();
