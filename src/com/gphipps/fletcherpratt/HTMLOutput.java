@@ -48,7 +48,7 @@ public class HTMLOutput implements OutputChannel {
         printWriter.println("  <h1>" + ship.getName() + nbsp + ship.getNationality() + " " + ship.getType() + "</h1>");
         printWriter.print("  <p><b>" + ship.getKlass() + "</b> class, Launched " + ship.getLaunched());
         if( ship.getLaunched() != ship.getRebuilt() ) {
-            printWriter.println(", Rebuilt " + ship.getRebuilt());
+            printWriter.print(", Rebuilt " + ship.getRebuilt());
         }
         printWriter.println(", Standard Displacement " + ship.getStandardDisplacement());
 
