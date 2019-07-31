@@ -47,7 +47,6 @@ public class Ship {
 
   /**
    * Prints an HTML ship log
-   * @param channel
    */
   public void createShipLog(OutputChannel channel) {
     int totalPoints = getPoints();

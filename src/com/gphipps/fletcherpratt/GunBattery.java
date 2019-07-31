@@ -25,7 +25,7 @@ public final class GunBattery extends Reducing {
   }
 
   protected String getStatusStringInternal( int i) {
-    if (this == nullGun) {
+    if (this == nullGun || this.getTotalCount() == 0 ) {
       return "";
     } else {
       return i + " x " + getDescription();

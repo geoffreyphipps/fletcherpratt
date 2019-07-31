@@ -78,6 +78,9 @@ public class CSVReader {
         //LOGGER.debug( "Line number " + lineNumber +"<" + line +">" );
         lineNumber++;
         String[] sections = line.split(",");
+        if(sections.length <= 1 ) {
+          continue;
+        }
         String s = stripQuotes(sections[0]);
         // The inner loop that does all the work. Read a ship, write out the log
         if (!s.equals("Name")) {
