@@ -15,10 +15,11 @@ public class HTMLOutput implements OutputChannel {
     }
 
     public void header( Ship ship ) {
-        String nbsp = "&nbsp;";
+        StringBuilder sb = new StringBuilder("&nbsp;");
         for( int i = 1; i < 25; i++ ) {
-            nbsp += "&nbsp;";
+            sb.append("&nbsp;");
         }
+        String nbsp = sb.toString();
         printWriter.println("<html>");
         printWriter.println("  <head>");
         printWriter.println("<meta http-equiv=\"Content-Type\" content=\"text/html; charset=utf-8\" />");
@@ -96,9 +97,9 @@ public class HTMLOutput implements OutputChannel {
     /**
      * Writes one HTML row of the ship log, three columns: Damage, Losses, Status
      *
-     * @param field1
-     * @param field2
-     * @param field3
+     * @param field1 Damage
+     * @param field2 Loss
+     * @param field3 Status
      */
     public void record( String field1, String field2, String field3 ) {
         printWriter.println("    <tr>");
