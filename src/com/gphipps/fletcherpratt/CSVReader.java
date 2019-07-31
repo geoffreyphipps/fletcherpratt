@@ -56,7 +56,7 @@ public class CSVReader {
 
     
     try {
-      File dir = new File( outputDirectoryName);
+      File dir = new File(outputDirectoryName);
       if( !(dir.exists() && dir.isDirectory())) {
         dir.mkdirs();
       }
