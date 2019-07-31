@@ -51,7 +51,11 @@ public class HTMLOutput implements OutputChannel {
             printWriter.println(", Rebuilt " + ship.getRebuilt());
         }
         printWriter.println(", Standard Displacement " + ship.getStandardDisplacement());
+
+        printWriter.print("  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + ship.getNotes());
         printWriter.println("</p>");
+
+        // Second line
 
         String s = String.format("%,d", ship.getPoints());
         printWriter.print("  <p><b>" + s + "</b> points &nbsp;&nbsp;<b>Weapons: </b>" + ship.getPrimary().getInitialStatus(true));
@@ -72,7 +76,9 @@ public class HTMLOutput implements OutputChannel {
 
         printWriter.println("&nbsp;&nbsp;&nbsp;&nbsp;<b>Speed:</b>&nbsp;&nbsp; " + ship.getSpeed().getInitialStatus(true));
 
-        printWriter.print("  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + ship.getNotes() + "</p>");
+        printWriter.println("</p>");
+
+        // Third line
 
         printWriter.println("  <p><b>Armor: </b>Belt " + ship.getBelt() + ",&nbsp;&nbsp; Deck " + ship.getDeck() + ",&nbsp;&nbsp; Turret: " + ship.getTurret());
 

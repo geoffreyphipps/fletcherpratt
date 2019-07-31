@@ -8,8 +8,8 @@ public class Ship {
 
   private String name;
   private String klass;
-  private int launched;
-  private int rebuilt;
+  private String launched;
+  private String rebuilt;
   private String nationality;
   private String type;
   private String torpedoClass;
@@ -29,7 +29,7 @@ public class Ship {
 
   private TreeSet<Reducing> featuresToReduce = new TreeSet<Reducing>();
 
-  public Ship(String name, String klass, int launched, int rebuilt) {
+  public Ship(String name, String klass, String launched, String rebuilt) {
     super();
     this.setName(name);
     this.setKlass( klass );
@@ -125,7 +125,7 @@ public class Ship {
    * @throws IOException
    */
   public static final void main(String args[]) throws FileNotFoundException, IOException {
-    Ship laArgentina = new Ship("La Argentina","Example", 1912, 1923);
+    Ship laArgentina = new Ship("La Argentina","Example", "1912", "1923");
     laArgentina.setPrimary(new GunBattery(9, 6));
     laArgentina.setSecondary(new GunBattery(4, 4));
     laArgentina.setTorpedoTubes(new TorpedoTubes(6));
@@ -234,19 +234,19 @@ public class Ship {
     this.klass = klass;
   }
 
-  public int getLaunched() {
+  public String getLaunched() {
     return launched;
   }
 
-  public void setLaunched(int launched) {
+  public void setLaunched(String launched) {
     this.launched = launched;
   }
 
-  public int getRebuilt() {
+  public String getRebuilt() {
     return rebuilt;
   }
 
-  public void setRebuilt(int rebuilt) {
+  public void setRebuilt(String rebuilt) {
     this.rebuilt = rebuilt;
   }
 

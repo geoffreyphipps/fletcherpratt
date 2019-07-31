@@ -104,7 +104,7 @@ public class CSVReader {
    */
   private Ship readShip( String[] sections) throws IOException {
 
-    Ship theShip = new Ship(stripQuotes(sections[NAME]), stripQuotes(sections[CLASS]), toInt(sections[LAUNCHED]), toInt(sections[REBUILT]));
+    Ship theShip = new Ship(stripQuotes(sections[NAME]), stripQuotes(sections[CLASS]), sections[LAUNCHED], sections[REBUILT]);
 
     theShip.setNationality( stripQuotes(sections[NATIONALITY]));
     theShip.setType( stripQuotes(sections[TYPE]));
