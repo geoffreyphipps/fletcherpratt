@@ -1,12 +1,14 @@
 package com.gphipps.fletcherpratt;
 
-public final class GunBattery extends Reducing {
+import java.text.DecimalFormat;
 
+public final class GunBattery extends Reducing {
   private double bore;
   public static final GunBattery nullGun = new GunBattery(0, 0);
 
   public GunBattery(int count, double bore) {
-    super(count, String.valueOf(bore) + "\"");
+    // Don't have zeros here
+    super(count, new DecimalFormat("##.#").format(bore) + '"' );
     this.bore = bore;
   }
 
@@ -26,7 +28,7 @@ public final class GunBattery extends Reducing {
     if (this == nullGun) {
       return "";
     } else {
-      return String.valueOf(i) + " x " + getDescription();
+      return i + " x " + getDescription();
     }
   }
 }

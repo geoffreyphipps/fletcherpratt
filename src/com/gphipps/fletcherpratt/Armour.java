@@ -1,5 +1,7 @@
 package com.gphipps.fletcherpratt;
 
+import java.text.DecimalFormat;
+
 public class Armour extends Feature {
     private double thickness;
     public Armour( double thickness, String description) {
@@ -20,8 +22,7 @@ public class Armour extends Feature {
     }
 
     public String toString() {
-      String s = String.format("%3.1f\"", thickness );
-      return s;
+        return new DecimalFormat("##.#").format(thickness) + '"';
     }
     
 }

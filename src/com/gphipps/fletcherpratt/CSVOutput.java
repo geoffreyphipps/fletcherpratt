@@ -1,20 +1,14 @@
-
 package com.gphipps.fletcherpratt;
 
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-/**
- *
- * 
- */
 public class CSVOutput implements OutputChannel {
   private String fieldSeparator="; ";
   private PrintWriter printWriter;
 
-  public CSVOutput( String filename ) throws FileNotFoundException, IOException {
+  public CSVOutput( String filename ) throws IOException {
     printWriter = new PrintWriter( new FileWriter(filename +".csv" ) );
   }
 
@@ -41,14 +35,11 @@ public class CSVOutput implements OutputChannel {
     record( String.valueOf( field1), field2, field3 );
   }
 
-
   public String getFieldSeparator() {
     return fieldSeparator;
   }
 
-
   public void setFieldSeparator(String fieldSeparator) {
     this.fieldSeparator = fieldSeparator;
   }
-
 }

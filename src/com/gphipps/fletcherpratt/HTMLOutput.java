@@ -5,10 +5,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-/**
- *
- * 
- */
 public class HTMLOutput implements OutputChannel {
 
   private String fieldSeparator = "; ";
@@ -30,10 +26,10 @@ public class HTMLOutput implements OutputChannel {
     printWriter.println("      body {");
     printWriter.println("        font-family: Verdana, Arial;");
     printWriter.println("        font: Verdana, Helvetica, sans-serif;");
-    printWriter.println("        width: 700;"); //881
+    printWriter.println("        width: 600;"); //881
     printWriter.println("        margin: 0px auto;");
     printWriter.println("        border: 1;");
-    printWriter.println("        font-size: 11px;");
+    printWriter.println("        font-size: 12px;");
     printWriter.println("        text-align: left;");
     printWriter.println("      }");
     printWriter.println("      th {");
@@ -75,15 +71,13 @@ public class HTMLOutput implements OutputChannel {
     printWriter.print("  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Turret Layout: " + ship.getPrimaryTurretLayout());
     printWriter.print("  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + ship.getNotes() + "</p>");
 
-
     printWriter.println("  <p>Belt: " + ship.getBelt() + "&nbsp;&nbsp; Deck: " + ship.getDeck() + "&nbsp;&nbsp; Turret: " + ship.getTurret() );
 
     printWriter.println("&nbsp;&nbsp;&nbsp;&nbsp;Torpedo Class: " + ship.getTorpedoClass() + " </p>");
     printWriter.println("  <table width=\"100%\"cellpadding=\"1\">");
     printWriter.println("    <tr>");
-    printWriter.println("      <th width=\"20%\">Damage</th><th width=\"25%\">Losses</th><th width=\"55%\">Status</th>");
+    printWriter.println("      <th width=\"15%\">Damage</th><th width=\"35%\">Status</th><th width=\"50%\">Loss</th>");
     printWriter.println("    </tr>");
-
   }
 
   public void footer() {
@@ -97,6 +91,12 @@ public class HTMLOutput implements OutputChannel {
   public void title(String s) {
   }
 
+  /**
+   * Writes one HTML row of the ship log, three columns: Damage, Losses, Status
+   * @param field1
+   * @param field2
+   * @param field3
+   */
   public void record(String field1, String field2, String field3) {
     printWriter.println("    <tr>");
     printWriter.print("      <td class=\"points\"><b>" + field1 + "</b></td>");

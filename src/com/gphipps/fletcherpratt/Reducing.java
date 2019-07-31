@@ -23,7 +23,7 @@ public abstract class Reducing extends Feature implements Comparable {
       return s;
     } else {
       if (s.length() > 0) {
-        return ", " + getStatusStringInternal(getCurrentCount() + 1);
+        return ",  " + getStatusStringInternal(getCurrentCount() + 1);
       } else {
         return "";
       }
@@ -78,7 +78,7 @@ public abstract class Reducing extends Feature implements Comparable {
   }
 
   /**
-   * From comparable,
+   * From comparable
    */
   @Override
   public int compareTo(Object other) {

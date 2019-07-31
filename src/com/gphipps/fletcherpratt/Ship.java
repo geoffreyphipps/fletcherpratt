@@ -14,7 +14,7 @@ public class Ship {
   private String type;
   private String torpedoClass;
   private String primaryTurretLayout;
-  private String notes;
+  private String notes="";
 
   private GunBattery primary = GunBattery.nullGun;
   private GunBattery secondary = GunBattery.nullGun;
@@ -38,12 +38,17 @@ public class Ship {
   }
 
   public int getPoints() {
-    return (int) Math.floor(speed.getPoints() *
+    double classic = speed.getPoints() *
             ( getPrimary().getPoints() + getSecondary().getPoints() + getTorpedoTubes().getPoints() +
               getBelt().getPoints() + getTurret().getPoints() + getDeck().getPoints() +
-              getAircraft().getPoints() + getMines().getPoints() )) + getStandardDisplacement();
+              getAircraft().getPoints() + getMines().getPoints() ) + getStandardDisplacement();
+    return (int) Math.floor(classic/20.0);
   }
 
+  /**
+   * Prints an HTML ship log
+   * @param channel
+   */
   public void createShipLog(OutputChannel channel) {
     int totalPoints = getPoints();
     primary.setTotalPoints(totalPoints);
@@ -51,7 +56,6 @@ public class Ship {
     torpedoTubes.setTotalPoints(totalPoints);
     speed.setTotalPoints(totalPoints);
 
-   
     featuresToReduce.add(primary);
     featuresToReduce.add(secondary);
     featuresToReduce.add(torpedoTubes);
@@ -59,13 +63,9 @@ public class Ship {
 
     channel.header(this);
     channel.title(getName());
-    
 
     int max = 17;
 
-//    for (Reducing r : featuresToReduce) {
-//      System.out.println(" XX " + r);
-//    }
     for (Reducing r : featuresToReduce) {
       r.loseOne();
     }
@@ -92,8 +92,7 @@ public class Ship {
       String status = getStatusString();
 
       String s = String.format("%,d",totalPoints-max);
-      channel.record( s, lostString, status);
-      
+      channel.record( s, status, lostString);
     } while (featuresToReduce.first().getCurrentBreakPoint() > 0);
 
     String s = String.format("%,d",totalPoints);
@@ -120,6 +119,12 @@ public class Ship {
     return s;
   }
 
+  /**
+   * Tests
+   * @param args
+   * @throws FileNotFoundException
+   * @throws IOException
+   */
   public static final void main(String args[]) throws FileNotFoundException, IOException {
     Ship laArgentina = new Ship("La Argentina","Example", 1912, 1923);
     laArgentina.setPrimary(new GunBattery(9, 6));
