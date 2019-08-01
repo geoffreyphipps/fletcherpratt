@@ -42,7 +42,7 @@ public class Ship {
             ( getPrimary().getPoints() + getSecondary().getPoints() + getTorpedoTubes().getPoints() +
               getBelt().getPoints() + getTurret().getPoints() + getDeck().getPoints() +
               getAircraft().getPoints() + getMines().getPoints() ) + getStandardDisplacement();
-    return (int) Math.floor(classic/20.0);
+    return (int) Math.floor(classic/40.0);
   }
 
   /**
