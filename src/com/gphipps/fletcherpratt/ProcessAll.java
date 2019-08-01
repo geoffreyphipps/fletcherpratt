@@ -18,9 +18,11 @@ public class ProcessAll {
         File outputRootDir = new File(args[1]);
 
         for( File file : inputFiles ) {
-            File outputDir = new File( outputRootDir.getPath() + File.separatorChar + file.getName().replace(".csv",""));
-            outputDir.mkdir();
-            reader.processFile(file.getPath(), outputDir.getPath());
+            if( file.getPath().endsWith(".csv")) {
+                File outputDir = new File(outputRootDir.getPath() + File.separatorChar + file.getName().replace(".csv", ""));
+                outputDir.mkdir();
+                reader.processFile(file.getPath(), outputDir.getPath());
+            }
         }
     }
 

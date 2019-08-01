@@ -1,6 +1,6 @@
 "Name","Class","Launched","Rebuilt","Nationality","Type","Primary Number","Primary Bore","Secondary Number","Secondary Bore","Torpedo Tubes","Belt","Deck","Turret","Mines","Aircraft","Speed","Tonnage","Torpedo Class","Main Turrets","Notes"
 
-"Argentina","Example",1910,1911,"Argentinian","Light Cruiser",9,6,4,4,6,3,2,2,0,2,31,6000,"C","AB XY","An example"
+"Argentina","Example",1910,1911,"Argentinian","Light Cruiser",9,6,4,4,6,3,2,2,0,2,31,6000,"C","2F 2F 2A 2A","An example"
 
 "King George V","King George V",1912,1912,"British","Battleship",10,13.5,16,6,3,12,4,11,0,0,21,23400,,"2F 2F 2W 2A 2A",
 "Centurion","King George V",1913,1913,"British","Battleship",10,13.5,16,6,3,12,4,11,0,0,21,23400,,"2F 2F 2W 2A 2A",

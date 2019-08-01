@@ -1,20 +1,21 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.gphipps.fletcherpratt;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStreamReader;
+import java.nio.charset.Charset;
+import java.util.Iterator;
+
+import org.apache.commons.csv.CSVFormat;
+import org.apache.commons.csv.CSVParser;
+import org.apache.commons.csv.CSVRecord;
 
 /**
  *
  * 
  */
 public class CSVReader {
+
+  private static final char DELIMITER = ',';
 
   private static final int NAME = 0;
   private static final int CLASS = 1;
@@ -35,7 +36,7 @@ public class CSVReader {
   private static final int SPEED = 16;
   private static final int TONNAGE = 17;
   private static final int TORPEDO_CLASS = 18;
-  private static final int PRIMARY_TURET_LAYOUT = 19;
+  private static final int PRIMARY_TURRET_LAYOUT = 19;
   private static final int NOTES = 20;
 
   private File outputDirectory;
@@ -45,16 +46,14 @@ public class CSVReader {
    *  The inner loop that does the work.
    */
   public void processFile(String fleetInputFileName, String outputDirectoryName ) {
-    InputStreamReader reader = null;
-
+    CSVParser parser;
     try {
-      reader = new InputStreamReader(new FileInputStream(fleetInputFileName));
+      parser = CSVParser.parse(new File(fleetInputFileName), Charset.defaultCharset(), CSVFormat.RFC4180.withDelimiter(DELIMITER));
     } catch (Exception ex) {
       System.out.println("Failed to read CSV file " + fleetInputFileName +", " + ex);
       return;
     }
 
-    
     try {
       File dir = new File(outputDirectoryName);
       if( !(dir.exists() && dir.isDirectory())) {
@@ -66,25 +65,30 @@ public class CSVReader {
       return;
     }
 
-
-    BufferedReader br = new BufferedReader(reader);
-
     System.out.println("Opened file '" + fleetInputFileName + "'");
     System.out.println("Writing to '" + getOutputDirectory() + "'");
     int lineNumber = 0;
     String line = "";
     try {
-      while ((line = br.readLine()) != null) {
+      for( CSVRecord csvRecord : parser ) {
         //LOGGER.debug( "Line number " + lineNumber +"<" + line +">" );
         lineNumber++;
-        String[] sections = line.split(",");
-        if(sections.length <= 1 ) {
+
+        // blank line
+        if( csvRecord.get(0).equals("")) {
           continue;
         }
-        String s = stripQuotes(sections[0]);
+
         // The inner loop that does all the work. Read a ship, write out the log
-        if (!s.equals("Name") && !stripQuotes(sections[1]).equals("Example") ) {
-          Ship ship = readShip(sections);
+        if (!csvRecord.get(0).equals("Name") && !stripQuotes(csvRecord.get(1)).equals("Example") ) {
+          Iterator<String> it =csvRecord.iterator();
+          String[] asArray = new String[NOTES+1];
+          int i =0;
+          while( it.hasNext()) {
+            asArray[i] = it.next();
+            i++;
+          }
+          Ship ship = readShip(asArray);
           ship.createShipLog(new HTMLOutput( getOutputDirectory().getPath() + File.separatorChar + ship.getName()));
         }
       }
@@ -119,8 +123,8 @@ public class CSVReader {
     theShip.setSpeed(new Speed(toInt(sections[SPEED])));
     theShip.setStandardDisplacement(toInt(sections[TONNAGE]));
     theShip.setTorpedoClass(sections[TORPEDO_CLASS]);
-    theShip.setPrimaryTurretLayout(sections[PRIMARY_TURET_LAYOUT].replaceAll("\"", ""));
-    if( sections.length == NOTES+1 ) {
+    theShip.setPrimaryTurretLayout(sections[PRIMARY_TURRET_LAYOUT].replaceAll("\"", ""));
+    if( sections[NOTES] != null ) {
       theShip.setNotes(sections[NOTES].replaceAll("\"", ""));
     }
 
