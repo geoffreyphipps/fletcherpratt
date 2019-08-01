@@ -27,7 +27,7 @@ public class HTMLOutput implements OutputChannel {
         printWriter.println("      body {");
         printWriter.println("        font-family: Verdana, Arial;");
         printWriter.println("        font: Verdana, Helvetica, sans-serif;");
-        printWriter.println("        width: 600;"); //881
+        printWriter.println("        width: 700;"); //881
         printWriter.println("        margin: 0px auto;");
         printWriter.println("        border: 1;");
         printWriter.println("        font-size: 12px;");
