@@ -83,7 +83,7 @@ public class CSVReader {
         }
         String s = stripQuotes(sections[0]);
         // The inner loop that does all the work. Read a ship, write out the log
-        if (!s.equals("Name")) {
+        if (!s.equals("Name") && !stripQuotes(sections[1]).equals("Example") ) {
           Ship ship = readShip(sections);
           ship.createShipLog(new HTMLOutput( getOutputDirectory().getPath() + File.separatorChar + ship.getName()));
         }
