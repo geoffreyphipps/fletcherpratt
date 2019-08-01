@@ -1,26 +1,13 @@
-"Name","Class","Launched","Rebuilt","Nationality","Type","Primary Number","Primary Bore","Secondary Number","Secondary Bore","Torpedo Tubes","Belt","Deck","Turret","Mines","Aircraft","Speed","Tonnage","Torpedo Class","Main Turrets","Notes"
+"Name"|"Class"|"Launched"|"Rebuilt"|"Nationality"|"Type"|"Primary Number"|"Primary Bore"|"Secondary Number"|"Secondary Bore"|"Torpedo Tubes"|"Belt"|"Deck"|"Turret"|"Mines"|"Aircraft"|"Speed"|"Tonnage"|"Torpedo Class"|"Main Turrets"|"Notes"
 
-"Argentina","Example",1910,1911,"Argentinian","Light Cruiser",9,6,4,4,6,3,2,2,0,2,31,6000,"C","2F 2F 2A 2A","An example"
+"Argentina"|"Example"|1910|1911|"Argentinian"|"Light Cruiser"|9|6|4|4|6|3|2|2|0|2|31|6000|"C"|"2F 2F 2A 2A"|"An example"
 
-"King George V","King George V",1912,1912,"British","Battleship",10,13.5,16,6,3,12,4,11,0,0,21,23400,,"2F 2F 2W 2A 2A",
-"Centurion","King George V",1913,1913,"British","Battleship",10,13.5,16,6,3,12,4,11,0,0,21,23400,,"2F 2F 2W 2A 2A",
-"Audacious","King George V",1913,1913,"British","Battleship",10,13.5,16,6,3,12,4,11,0,0,21,23400,,"2F 2F 2W 2A 2A",
-"Ajax","King George V",1913,1913,"British","Battleship",10,13.5,16,6,3,12,4,11,0,0,21,23400,,"2F 2F 2W 2A 2A",
+"King George V, Centurion, Audacious, Ajax"|"King George V"|1912|1912|"British"|"Battleship"|10|13.5|16|6|3|12|4|11|0|0|21|23400||"2F 2F 2W 2A 2A"|
 
-"Iron Duke","Iron Duke",1912,1912,"British","Battleship",10,13.5,12,6,4,12,2.5,11,0,0,21,25000,"D","2F 2F 2W 2A 2A",
-"Marlborough","Iron Duke",1912,1912,"British","Battleship",10,13.5,12,6,4,12,2.5,11,0,0,21,25000,"D","2F 2F 2W 2A 2A",
-"Benbow","Iron Duke",1913,1913,"British","Battleship",10,13.5,12,6,4,12,2.5,11,0,0,21,25000,"D","2F 2F 2W 2A 2A",
+"Iron Duke, Marlborough, Benbow"|"Iron Duke"|1912|1912|"British"|"Battleship"|10|13.5|12|6|4|12|2.5|11|0|0|21|25000|"D"|"2F 2F 2W 2A 2A"|
 
-"Queen Elizabeth","Queen Elizabeth",1913,1913,"British","Battleship",8,15,14,6,4,13,3,13,0,0,24,27500,"D","2F 2F 2A 2A",
-"Barham","Queen Elizabeth",1914,1914,"British","Battleship",8,15,14,6,4,13,3,13,0,0,24,27500,"E","2F 2F 2A 2A",
-"Malaya","Queen Elizabeth",1914,1914,"British","Battleship",8,15,14,6,4,13,3,13,0,0,24,27500,"E","2F 2F 2A 2A",
-"Valiant","Queen Elizabeth",1914,1914,"British","Battleship",8,15,14,6,4,13,3,13,0,0,24,27500,"E","2F 2F 2A 2A",
-"Warspite","Queen Elizabeth",1913,1913,"British","Battleship",8,15,14,6,4,13,3,13,0,0,24,27500,"E","2F 2F 2A 2A",
+"Queen Elizabeth, Barham, Malaya, Valiant, Warspite"|"Queen Elizabeth"|1913|1913|"British"|"Battleship"|8|15|14|6|4|13|3|13|0|0|24|27500|"D"|"2F 2F 2A 2A"|
 
-"Indefatigable","Indefatigable",1909,1909,"British","Battlecruiser",8,12,16,4,2,6,2.5,7,0,0,26,18500,"D","2F 2W 2W 2A",
-"Australia","Indefatigable",1911,1911,"Australian","Battlecruiser",8,12,16,4,2,6,2.5,7,0,0,26,18500,"D","2F 2W 2W 2A",
-"New Zealand","Indefatigable",1911,1911,"New Zealand","Battlecruiser",8,12,16,4,2,6,2.5,7,0,0,26,18500,"D","2F 2W 2W 2A",
+"Indefatigable, Australia, New Zealand"|"Indefatigable"|1909|1909|"British"|"Battlecruiser"|8|12|16|4|2|6|2.5|7|0|0|26|18500|"D"|"2F 2W 2W 2A"|
 
-"Lion","Lion",1910,1910,"British","Battlecruiser",8,13.5,16,4,2,9,2.5,9,0,0,28,26270,"D","2F 2F 2W 2A",
-"Princess Royal","Lion",1910,1910,"British","Battlecruiser",8,13.5,16,4,2,9,2.5,9,0,0,28,26270,"D","2F 2F 2W 2A",
-"Queen Mary","Lion",1910,1910,"British","Battlecruiser",8,13.5,16,4,2,9,2.5,9,0,0,28,26270,"D","2F 2F 2W 2A",
+"Lion, Princess Royal, Queen Mary"|"Lion"|1910|1910|"British"|"Battlecruiser"|8|13.5|16|4|2|9|2.5|9|0|0|28|26270|"D"|"2F 2F 2W 2A"|

@@ -1,20 +1,13 @@
-"Name","Class","Launched","Rebuilt","Nationality","Type","Primary Number","Primary Bore","Secondary Number","Secondary Bore","Torpedo Tubes","Belt","Deck","Turret","Mines","Aircraft","Speed","Tonnage","Torpedo Class","Main Turrets","Notes"
+"Name"|"Class"|"Launched"|"Rebuilt"|"Nationality"|"Type"|"Primary Number"|"Primary Bore"|"Secondary Number"|"Secondary Bore"|"Torpedo Tubes"|"Belt"|"Deck"|"Turret"|"Mines"|"Aircraft"|"Speed"|"Tonnage"|"Torpedo Class"|"Main Turrets"|"Notes"
 
-"Argentina","Example",1910,1911,"Argentinian","Light Cruiser",9,6,4,4,6,3,2,2,0,2,31,6000,"C","AB XY","An example"
+"Delaware, North Dakota"|"Delaware"|1910|1910|"USA"|"Battleship"|10|12|14|5|2|11|2|12|0|0|21|20380|"D"|"2F 2F 2A 2W 2A"
 
-"Delaware","Delaware",1910,1910,"USA","Battleship",10,12,14,5,2,11,2,12,0,0,21,20380,"D","2F 2F 2A 2W 2A"
-"North Dakota","Delaware",1910,1910,"USA","Battleship",10,12,14,5,2,11,2,12,0,0,21,20380,"D","2F 2F 2A 2W 2A"
+"Florida, Utah"|"Florida"|1911|1911|"USA"|"Battleship"|10|12|16|5|2|11|1.5|12|0|0|21|21825|"D"|"2F 2F 2A 2W 2A"
 
-"Florida","Florida",1911,1911,"USA","Battleship",10,12,16,5,2,11,1.5,12,0,0,21,21825,"D","2F 2F 2A 2W 2A"
-"Utah","Florida",1911,1911,"USA","Battleship",10,12,16,5,2,11,1.5,12,0,0,21,21825,"D","2F 2F 2A 2W 2A"
+"Wyoming, Arkansas"|"Wyoming"|1912|1912|"USA"|"Battleship"|12|12|21|5|2|11|2|12|0|0|20|26000|"D"|"2F 2F 2W 2W 2A 2A"
 
-"Wyoming","Wyoming",1912,1912,"USA","Battleship",12,12,21,5,2,11,2,12,0,0,20,26000,"D","2F 2F 2W 2W 2A 2A"
-"Arkansas","Wyoming",1912,1912,"USA","Battleship",12,12,21,5,2,11,2,12,0,0,20,26000,"D","2F 2F 2W 2W 2A 2A"
+"New York, Texas"|"New York"|1914|1914|"USA"|"Battleship"|10|14|21|5|2|12|2|14|0|0|21|27000|"D"|"2F 2F 2W 2A 2A"
 
-"New York","New York",1914,1914,"USA","Battleship",10,14,21,5,2,12,2,14,0,0,21,27000,"D","2F 2F 2W 2A 2A"
-"Texas","New York",1914,1914,"USA","Battleship",10,14,21,5,2,12,2,14,0,0,21,27000,"D","2F 2F 2W 2A 2A"
+"Nevada, Oklahoma"|"Nevada"|1916|1916|"USA"|"Battleship"|10|14|21|5|4|13.5|3.5|18|0|0|20|27500|"D"|"3F 2F 2A 3A"
 
-"Nevada","Nevada",1916,1916,"USA","Battleship",10,14,21,5,4,13.5,3.5,18,0,0,20,27500,"D","3F 2F 2A 3A"
-"Oklahoma","Nevada",1916,1916,"USA","Battleship",10,14,21,5,4,13.5,3.5,18,0,0,20,27500,"D","3F 2F 2A 3A"
-
-"Lexington","Lexington",1919?,1919?,"USA","Battlecruiser",8,16,16,6,8,7,2.25,11,0,0,33,43500,"D","2F 2F 2A 2A","Uncompleted"
+"Lexington"|"Lexington"|1919?|1919?|"USA"|"Battlecruiser"|8|16|16|6|8|7|2.25|11|0|0|33|43500|"D"|"2F 2F 2A 2A"|"Uncompleted"

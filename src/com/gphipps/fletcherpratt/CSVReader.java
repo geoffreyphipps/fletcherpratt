@@ -15,7 +15,7 @@ import org.apache.commons.csv.CSVRecord;
  */
 public class CSVReader {
 
-  private static final char DELIMITER = ',';
+  private static final char DELIMITER = '|';
 
   private static final int NAME = 0;
   private static final int CLASS = 1;
@@ -75,7 +75,7 @@ public class CSVReader {
         lineNumber++;
 
         // blank line
-        if( csvRecord.get(0).equals("")) {
+        if( csvRecord.get(0).trim().equals("")) {
           continue;
         }
 
@@ -88,8 +88,12 @@ public class CSVReader {
             asArray[i] = it.next();
             i++;
           }
-          Ship ship = readShip(asArray);
-          ship.createShipLog(new HTMLOutput( getOutputDirectory().getPath() + File.separatorChar + ship.getName()));
+          String[] shipNames = asArray[0].split(",");
+          for( String shipName : shipNames ) {
+            asArray[0]= shipName.trim();
+            Ship ship = readShip(asArray);
+            ship.createShipLog(new HTMLOutput(getOutputDirectory().getPath() + File.separatorChar + ship.getName()));
+          }
         }
       }
     } catch (Exception ex) {

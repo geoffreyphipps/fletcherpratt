@@ -1,53 +1,15 @@
-"Name","Class","Launched","Rebuilt","Nationality","Type","Primary Number","Primary Bore","Secondary Number","Secondary Bore","Torpedo Tubes","Belt","Deck","Turret","Mines","Aircraft","Speed","Tonnage","Torpedo Class","Main Turrets","Notes"
+"Name"|"Class"|"Launched"|"Rebuilt"|"Nationality"|"Type"|"Primary Number"|"Primary Bore"|"Secondary Number"|"Secondary Bore"|"Torpedo Tubes"|"Belt"|"Deck"|"Turret"|"Mines"|"Aircraft"|"Speed"|"Tonnage"|"Torpedo Class"|"Main Turrets"|"Notes"
 
-"Acheron","Acheron",1911,1911,"British","Destroyer",2,4,2,3,2,0,0,0,0,0,29,770,"B","1F 1A",
-"Archer","Acheron",1911,1911,"British","Destroyer",2,4,2,3,2,0,0,0,0,0,29,770,"B","1F 1A",
-"Ariel","Acheron",1911,1911,"British","Destroyer",2,4,2,3,2,0,0,0,0,0,29,770,"B","1F 1A",
+"Acheron, Archer, Ariel"|"Acheron"|1911|1911|"British"|"Destroyer"|2|4|2|3|2|0|0|0|0|0|29|770|"B"|"1F 1A"|
 
-"Firedrake","Special I",1912,1912,"British","Destroyer",2,4,2,3,2,0,0,0,0,0,32,990,"B","1F 1A",
-"Lurcher","Special I",1912,1912,"British","Destroyer",2,4,2,3,2,0,0,0,0,0,32,990,"B","1F 1A",
-"Oak","Special I",1912,1912,"British","Destroyer",2,4,2,3,2,0,0,0,0,0,32,990,"B","1F 1A",
+"Firedrake, Lurcher, Oak"|"Special I"|1912|1912|"British"|"Destroyer"|2|4|2|3|2|0|0|0|0|0|32|990|"B"|"1F 1A"|
 
-"Laforey","L",1913,1913,"British","Destroyer",3,4,1,1.5,4,0,0,0,0,0,29,965,"B","1F 1W 1w 1A",
-"Lance","L",1913,1913,"British","Destroyer",3,4,1,1.5,4,0,0,0,0,0,29,965,"B","1F 1W 1w 1A",
-"Lassoo","L",1915,1915,"British","Destroyer",3,4,1,1.5,4,0,0,0,0,0,29,965,"B","1F 1W 1w 1A",
+"Laforey, Lance, Lassoo"|"L"|1913|1913|"British"|"Destroyer"|3|4|1|1.5|4|0|0|0|0|0|29|965|"B"|"1F 1W 1w 1A"|
 
-"Parramatta","River",1910,1910,"Australian","Destroyer",1,4,3,3,3,0,0,0,0,0,26,700,"B","1F 1w 1w 1a",
-"Yarra","River",1910,1910,"Australian","Destroyer",1,4,3,3,3,0,0,0,0,0,26,700,"B","1F 1w 1w 1a",
-"Warrego","River",1911,1911,"Australian","Destroyer",1,4,3,3,3,0,0,0,0,0,26,700,"B","1F 1w 1w 1a",
-"Huon","River",1914,1914,"Australian","Destroyer",1,4,3,3,3,0,0,0,0,0,26,700,"B","1F 1w 1w 1a",
+"Parramatta, Yarra, Warrego, Huon"|"River"|1910|1910|"Australian"|"Destroyer"|1|4|3|3|3|0|0|0|0|0|26|700|"B"|"1F 1w 1w 1a"|
 
-"Restless","R",1916,1916,"British","Destroyer",3,4,1,2,4,0,0,0,0,0,36,975,"B","1F 1W 1w 1A",
-"Radstock","R",1916,1916,"British","Destroyer",3,4,1,2,4,0,0,0,0,0,36,975,"B","1F 1W 1w 1A",
-"Raider","R",1916,1916,"British","Destroyer",3,4,1,2,4,0,0,0,0,0,36,975,"B","1F 1W 1w 1A",
+"Restless, Radstock, Raider"|"R"|1916|1916|"British"|"Destroyer"|3|4|1|2|4|0|0|0|0|0|36|975|"B"|"1F 1W 1w 1A"|
 
-"Acorn","H",1910,1910,"British","Destroyer",2,4,2,3,2,0,0,0,0,0,27,750,,"1F 1A",
-"Alarm","H",1910,1910,"British","Destroyer",2,4,2,3,2,0,0,0,0,0,27,750,,"1F 1A",
-"Brisk","H",1910,1910,"British","Destroyer",2,4,2,3,2,0,0,0,0,0,27,750,,"1F 1A",
-"Cameleon","H",1910,1910,"British","Destroyer",2,4,2,3,2,0,0,0,0,0,27,750,,"1F 1A",
-"Comet","H",1910,1910,"British","Destroyer",2,4,2,3,2,0,0,0,0,0,27,750,,"1F 1A",
-"Goldfinch","H",1910,1910,"British","Destroyer",2,4,2,3,2,0,0,0,0,0,27,750,,"1F 1A",
-"Fury","H",1910,1910,"British","Destroyer",2,4,2,3,2,0,0,0,0,0,27,750,,"1F 1A",
-"Hope","H",1910,1910,"British","Destroyer",2,4,2,3,2,0,0,0,0,0,27,750,,"1F 1A",
-"Lame","H",1910,1910,"British","Destroyer",2,4,2,3,2,0,0,0,0,0,27,750,,"1F 1A",
-"Lyra","H",1910,1910,"British","Destroyer",2,4,2,3,2,0,0,0,0,0,27,750,,"1F 1A",
-"Martin","H",1910,1910,"British","Destroyer",2,4,2,3,2,0,0,0,0,0,27,750,,"1F 1A",
-"Minstrel","H",1910,1910,"British","Destroyer",2,4,2,3,2,0,0,0,0,0,27,750,,"1F 1A",
-"Nemesis","H",1910,1910,"British","Destroyer",2,4,2,3,2,0,0,0,0,0,27,750,,"1F 1A",
-"Nereide","H",1910,1910,"British","Destroyer",2,4,2,3,2,0,0,0,0,0,27,750,,"1F 1A",
-"Nymphe","H",1910,1910,"British","Destroyer",2,4,2,3,2,0,0,0,0,0,27,750,,"1F 1A",
-"Redpole","H",1910,1910,"British","Destroyer",2,4,2,3,2,0,0,0,0,0,27,750,,"1F 1A",
-"Rifleman","H",1910,1910,"British","Destroyer",2,4,2,3,2,0,0,0,0,0,27,750,,"1F 1A",
-"Ruby","H",1910,1910,"British","Destroyer",2,4,2,3,2,0,0,0,0,0,27,750,,"1F 1A",
-"Sheldrake","H",1910,1910,"British","Destroyer",2,4,2,3,2,0,0,0,0,0,27,750,,"1F 1A",
-"Staunch","H",1910,1910,"British","Destroyer",2,4,2,3,2,0,0,0,0,0,27,750,,"1F 1A",
-
-"Mons","Admiralty M",1915,1915,"British","Destroyer",3,4,2,1.6,2,0,0,0,0,0,34,994,,"1F 1W 1w 1A",
-"Marne","Admiralty M",1915,1915,"British","Destroyer",3,4,2,1.6,2,0,0,0,0,0,34,994,,"1F 1W 1w 1A",
-"Michael","Admiralty M",1915,1915,"British","Destroyer",3,4,2,1.6,2,0,0,0,0,0,34,994,,"1F 1W 1w 1A",
-"Milbrook","Admiralty M",1915,1915,"British","Destroyer",3,4,2,1.6,2,0,0,0,0,0,34,994,,"1F 1W 1w 1A",
-"Minion","Admiralty M",1915,1915,"British","Destroyer",3,4,2,1.6,2,0,0,0,0,0,34,994,,"1F 1W 1w 1A",
-"Munster","Admiralty M",1915,1915,"British","Destroyer",3,4,2,1.6,2,0,0,0,0,0,34,994,,"1F 1W 1w 1A",
-"Mystic","Admiralty M",1915,1915,"British","Destroyer",3,4,2,1.6,2,0,0,0,0,0,34,994,,"1F 1W 1w 1A",
-"Maenad","Admiralty M",1915,1915,"British","Destroyer",3,4,2,1.6,2,0,0,0,0,0,34,994,,"1F 1W 1w 1A",
-"Magic","Admiralty M",1915,1915,"British","Destroyer",3,4,2,1.6,2,0,0,0,0,0,34,994,,"1F 1W 1w 1A",
+"Acorn, Alarm, Brisk, Cameleon, Comet, Fury, Goldfinch, Hope, Lame, Lyra, Martin, Minstrel, Nemesis, Nereide, Nymphe, Redpole, Rifleman, Ruby, Sheldrake, Staunch"|"H"|1910|1910|"British"|"Destroyer"|2|4|2|3|2|0|0|0|0|0|27|750||"1F 1A"|
+ 
+"Marne, Mons, Michael, Milbrook, Minion, Munster, Mystic, Maenad, Magic"|"Admiralty M"|1915|1915|"British"|"Destroyer"|3|4|2|1.6|2|0|0|0|0|0|34|994||"1F 1W 1w 1A"|
