@@ -18,6 +18,10 @@ For every CSV in the input directory it creates a sub-directory
 in the output directory and generates an HTML log file for every
 ship into that subdirectory.
 
+This project uses the commons-csv package from apache, download it 
+from apache.org,
+probably https://commons.apache.org/proper/commons-csv/download_csv.cgi
+
 Input Data Files
 ================
 
