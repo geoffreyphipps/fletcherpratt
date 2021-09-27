@@ -117,7 +117,10 @@ public class CSVReader {
     theShip.setNationality( stripQuotes(sections[NATIONALITY]));
     theShip.setType( stripQuotes(sections[TYPE]));
     theShip.setPrimary(new GunBattery(toInt(sections[PRIMARY_NUMBER]), toDouble(sections[PRIMARY_BORE])));
-    theShip.setSecondary(new GunBattery(toInt(sections[SECONDARY_NUMBER]), toDouble(sections[SECONDARY_BORE])));
+
+    // Halve the number of secondaries
+    theShip.setSecondary(new GunBattery(toInt(sections[SECONDARY_NUMBER])/2, toDouble(sections[SECONDARY_BORE])));
+
     theShip.setTorpedoTubes(new TorpedoTubes(toInt(sections[TORPEDO_TUBES])));
     theShip.setBelt(new Armour(toDouble(sections[BELT]), "belt"));
     theShip.setDeck(new Armour(toDouble(sections[DECK]), "deck"));

@@ -4,12 +4,15 @@ import java.text.DecimalFormat;
 
 public final class GunBattery extends Reducing {
   private double bore;
+  private GunType gunType;
+
   public static final GunBattery nullGun = new GunBattery(0, 0);
 
   public GunBattery(int count, double bore) {
     // Don't have zeros here
     super(count, new DecimalFormat("##.#").format(bore) + '"' );
     this.bore = bore;
+    this.gunType = GunType.findByBore(bore);
   }
 
   public double getPoints() {
@@ -19,9 +22,16 @@ public final class GunBattery extends Reducing {
   public double getBore() {
     return bore;
   }
+  public void setBore(double bore) {
+    this.bore = bore;
+    this.gunType = GunType.findByBore(bore);
+  }
 
-  public void setBore(double count) {
-    this.bore = count;
+  public GunType getGunType() {
+    return gunType;
+  }
+  public void setGunType(GunType gunType) {
+    this.gunType = gunType;
   }
 
   protected String getStatusStringInternal( int i) {

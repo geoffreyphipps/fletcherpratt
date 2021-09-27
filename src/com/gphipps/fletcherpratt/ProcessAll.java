@@ -4,6 +4,7 @@ import java.io.File;
 
 /**
  * Reads all the CSVs in the first argument.
+ * Second output is the output directory.
  * For each CSV, create a subdirectory of the matching name (with .csv stripped) in the output directory
  * and write all the ship logs into that subdirectory.
  */

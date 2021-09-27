@@ -12,10 +12,10 @@ building up a new CSV file. The ProcessAll is the real entry point.
 It takes two arguments:
 
 1. The input directory
-2. The output directory
+2. The outputSafe directory
 
 For every CSV in the input directory it creates a sub-directory
-in the output directory and generates an HTML log file for every
+in the outputSafe directory and generates an HTML log file for every
 ship into that subdirectory.
 
 This project uses the commons-csv package from apache, download it 
@@ -33,11 +33,8 @@ be necessary to include them if there was a battle involving
 both capital ships and torpedo boats, where the battleships large 
 number of 3" guns would be useful.
 
-The schema is not normalized. Each member of a class repeats the
-information for that class. A future enhancement will replace 
-the single ship name with a list of ships in that class.
+Ships are organized vy class
 
-Many features can have multiple values. Specifically
 
 Armor is always taken to be the maximum value for that category in a published source.
 For example, belt armor typically tapers and might be quoted
@@ -66,7 +63,7 @@ centerline turrets:
 
 * Forward - meaning Bow, Port, and Starboard
 * Aft - meaning Stern, Port, and Starboard
-* Wing - meaning Port and Starboard
+* Center-Line - meaning Port and Starboard
 
 Lower case indicates secondary armament. That is only used for destroyers,
 because they often mounted their secondary armament center-line. 
@@ -77,9 +74,9 @@ super-firing would be:
 
 2F 2F 2A 2A
 
-if the midships turrets were not super-firing (unusual) then it would be
+if the midships turrets were not super-firing then it would be
 
-2F 2W 2W 2A
+2F 2C 2C 2A
 
 The Nelson and Rodney are
 
@@ -95,3 +92,5 @@ guns:
 Many cruisers had no turreted main battery guns, all were in casemates.
 In this case the code is "All casemate" and therefore half the guns fire on each broadside,
 with no fore or aft coverage.
+
+All secondaries are assumed to be braodside, therefore the number in the CSV is halved.
