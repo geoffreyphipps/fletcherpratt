@@ -39,19 +39,19 @@ public class HTMLOutput implements OutputChannel {
         printSpeed(ship);
           p_end();
 
+        p();
+        printArmorLine(ship);
+        p_end();
 
           p();
         printWeapons(ship);
           p_end();
         printGunTypes(ship);
+        p(); p_end();
 
         // Third line
 
-          p();
-        printArmorLine(ship);
-          p_end();
-
-          startDamageTable();
+        startDamageTable();
     }
 
     private void p_end() {
@@ -78,11 +78,19 @@ public class HTMLOutput implements OutputChannel {
         printWriter.println("      th {");
         printWriter.println("        text-align: right;");
         printWriter.println("      }");
-        printWriter.println("      th.guns-header {");
-        printWriter.println("        text-align: right;");
-        printWriter.println("        font-size: 12px;");
+        printWriter.println("      table, th, td {");
+        printWriter.println("        border: 1px solid black;");
+        printWriter.println("        border-collapse: collapse;");
         printWriter.println("      }");
         printWriter.println("      th.guns-header-multispan {");
+        printWriter.println("        text-align: center;");
+        printWriter.println("        font-size: 12px;");
+        printWriter.println("      }");
+        printWriter.println("      th.guns-header {");
+        printWriter.println("        text-align: center;");
+        printWriter.println("        font-size: 12px;");
+        printWriter.println("      }");
+        printWriter.println("      td.guns {");
         printWriter.println("        text-align: center;");
         printWriter.println("        font-size: 12px;");
         printWriter.println("      }");
@@ -133,9 +141,10 @@ public class HTMLOutput implements OutputChannel {
 
 
     private void printGunTypes(Ship ship) {
-        printWriter.println("  <table width=\"100% \"cellpadding=\"1\">");
+        printWriter.println("  <table width=\"80% \"cellpadding=\"1\">");
         printWriter.println("    <tr>");
-        printWriter.println("      <th colspan=\"4\" class=\"guns-header-multispan\"></th>");
+        printWriter.println("      <th colspan=\"1\" class=\"guns-header-multispan\"></th>");
+        printWriter.println("      <th colspan=\"3\" class=\"guns-header-multispan\">Range</th>");
         printWriter.println("      <th colspan=\"2\" class=\"guns-header-multispan\">Damage</th>");
         printWriter.println("    </tr>");
         printWriter.println("    <tr>");
@@ -152,18 +161,18 @@ public class HTMLOutput implements OutputChannel {
         printWriter.println("  </table>");
 
     }
-//
-private void printGunType(GunType gt) {
-    int r = gt.getMaxRange();
-    printWriter.println("    <tr>");
-    printWriter.print("      <td class=\"points\">" + gt.getBore() + "\"</th> ");
-    printWriter.print("      <td class=\"points\">" + r + "</th> ");
-    printWriter.print("      <td class=\"points\">" + r/2 + "</th>");
-    printWriter.print("      <td class=\"points\">" + r/4 + "</th>");
-    printWriter.print("      <td class=\"points\">" + gt.getDamage() + "</th>");
-    printWriter.print("      <td class=\"points\">" +gt.getDamage()/2 + "</th>");
-    printWriter.println("    </tr>");
-}
+
+    private void printGunType(GunType gt) {
+        int r = gt.getMaxRange();
+        printWriter.println("    <tr>");
+        printWriter.println("      <td class=\"guns\">" + gt.getBore() + "\"</th> ");
+        printWriter.println("      <td class=\"guns\">" + r + "</th> ");
+        printWriter.println("      <td class=\"guns\">" + r/2 + "</th>");
+        printWriter.println("      <td class=\"guns\">" + r/4 + "</th>");
+        printWriter.println("      <td class=\"guns\">" + gt.getDamage() + "</th>");
+        printWriter.println("      <td class=\"guns\">" + gt.getDamage()/2 + "</th>");
+        printWriter.println("    </tr>");
+    }
 
     private void printSpeed(Ship ship) {
         printWriter.println("&nbsp;&nbsp;&nbsp;&nbsp;<b>Speed:</b>&nbsp;&nbsp; " + ship.getSpeed().getInitialStatus(true));
@@ -176,9 +185,9 @@ private void printGunType(GunType gt) {
     }
 
     private void startDamageTable() {
-        printWriter.println("  <table width=\"100% \"cellpadding=\"1\">");
+        printWriter.println("  <table width=\"80% \"cellpadding=\"2\">");
         printWriter.println("    <tr>");
-        printWriter.println("      <th width=\"15%\">Damage</th><th width=\"35%\">Status</th><th width=\"50%\">Loss</th>");
+        printWriter.println("      <th width=\"15%\">Damage</th><th width=\"55%\">Status</th><th width=\"30%\">Loss</th>");
         printWriter.println("    </tr>");
     }
 
