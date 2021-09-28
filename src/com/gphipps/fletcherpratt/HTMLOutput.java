@@ -42,14 +42,16 @@ public class HTMLOutput implements OutputChannel {
 
           p();
         printWeapons(ship);
-        printGunTypes(ship);
           p_end();
+        printGunTypes(ship);
 
         // Third line
 
           p();
         printArmorLine(ship);
           p_end();
+
+          startDamageTable();
     }
 
     private void p_end() {
@@ -75,6 +77,14 @@ public class HTMLOutput implements OutputChannel {
         printWriter.println("      }");
         printWriter.println("      th {");
         printWriter.println("        text-align: right;");
+        printWriter.println("      }");
+        printWriter.println("      th.guns-header {");
+        printWriter.println("        text-align: right;");
+        printWriter.println("        font-size: 12px;");
+        printWriter.println("      }");
+        printWriter.println("      th.guns-header-multispan {");
+        printWriter.println("        text-align: center;");
+        printWriter.println("        font-size: 12px;");
         printWriter.println("      }");
         printWriter.println("      td.points {");
         printWriter.println("        text-align: right;");
@@ -104,7 +114,7 @@ public class HTMLOutput implements OutputChannel {
     }
 
     private void printWeapons(Ship ship) {
-        printWriter.print("<b>Primary: </b>" + ship.getPrimary().getInitialStatus(true));
+        printWriter.print("<b>Batteries:</p><p>" + SP_2 + "Primary: </b>" + ship.getPrimary().getInitialStatus(true));
 
         printWriter.print(SP_2 + ship.getPrimaryTurretLayout() + ",");
 
@@ -119,35 +129,54 @@ public class HTMLOutput implements OutputChannel {
         if( ship.getAircraft().getCurrentCount() > 0 ) {
             printWriter.print(SP_2 + ship.getAircraft().getInitialStatus(true));
         }
-
     }
 
 
     private void printGunTypes(Ship ship) {
-        p();
-        printGunType( ship.getPrimary().getGunType() );
-        p_end();
-        p();
-        printGunType( ship.getSecondary().getGunType());
-        p_end();
-    }
+        printWriter.println("  <table width=\"100% \"cellpadding=\"1\">");
+        printWriter.println("    <tr>");
+        printWriter.println("      <th colspan=\"4\" class=\"guns-header-multispan\"></th>");
+        printWriter.println("      <th colspan=\"2\" class=\"guns-header-multispan\">Damage</th>");
+        printWriter.println("    </tr>");
+        printWriter.println("    <tr>");
+        printWriter.println("      <th class=\"guns-header\">Caliber</th> ");
+        printWriter.println("      <th class=\"guns-header\">Max</th>");
+        printWriter.println("      <th class=\"guns-header\">Half</th>");
+        printWriter.println("      <th class=\"guns-header\">Close</th>");
+        printWriter.println("      <th class=\"guns-header\">Penetrating</th>");
+        printWriter.println("      <th class=\"guns-header\">Non-Penetrating </th>");
+        printWriter.println("    </tr>");
 
-    private void printGunType(GunType gt) {
-        int r = gt.getMaxRange();
-        printWriter.print( "<b>"+ SP_2 + Double.toString(gt.getBore()) + "\":</b>" + SP_2 + "Max:  " + r + '"' + SP_2 +
-                "Half: " + r/2 + '"' +SP_2 + "Close: " + r/4 + "\", " + SP_2 +
-                "Penetrating Damage: " + gt.getDamage() + "," +  SP_2 + "Non-Penetrating: " + gt.getDamage()/2 );
+        printGunType( ship.getPrimary().getGunType() );
+        printGunType( ship.getSecondary().getGunType());
+        printWriter.println("  </table>");
+
     }
+//
+private void printGunType(GunType gt) {
+    int r = gt.getMaxRange();
+    printWriter.println("    <tr>");
+    printWriter.print("      <td class=\"points\">" + gt.getBore() + "\"</th> ");
+    printWriter.print("      <td class=\"points\">" + r + "</th> ");
+    printWriter.print("      <td class=\"points\">" + r/2 + "</th>");
+    printWriter.print("      <td class=\"points\">" + r/4 + "</th>");
+    printWriter.print("      <td class=\"points\">" + gt.getDamage() + "</th>");
+    printWriter.print("      <td class=\"points\">" +gt.getDamage()/2 + "</th>");
+    printWriter.println("    </tr>");
+}
 
     private void printSpeed(Ship ship) {
         printWriter.println("&nbsp;&nbsp;&nbsp;&nbsp;<b>Speed:</b>&nbsp;&nbsp; " + ship.getSpeed().getInitialStatus(true));
     }
 
     private void printArmorLine(Ship ship) {
-        printWriter.println("  <p><b>Armor: </b>Belt " + ship.getBelt() + ",&nbsp;&nbsp; Deck " + ship.getDeck() + ",&nbsp;&nbsp; Turret: " + ship.getTurret());
+        printWriter.println("  <b>Armor: </b>Belt " + ship.getBelt() + ",&nbsp;&nbsp; Deck " + ship.getDeck() + ",&nbsp;&nbsp; Turret: " + ship.getTurret());
 
-        printWriter.println("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Torpedo Class:</b> " + ship.getTorpedoClass() + " </p>");
-        printWriter.println("  <table width=\"100%\"cellpadding=\"1\">");
+        printWriter.println("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Torpedo Class:</b> " + ship.getTorpedoClass() );
+    }
+
+    private void startDamageTable() {
+        printWriter.println("  <table width=\"100% \"cellpadding=\"1\">");
         printWriter.println("    <tr>");
         printWriter.println("      <th width=\"15%\">Damage</th><th width=\"35%\">Status</th><th width=\"50%\">Loss</th>");
         printWriter.println("    </tr>");
