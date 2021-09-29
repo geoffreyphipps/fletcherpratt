@@ -14,6 +14,7 @@ public class Ship {
   private String type;
   private String torpedoClass;
   private String primaryTurretLayout;
+  private String torpedoTubeLayout = "";
   private String notes="";
 
   private GunBattery primary = GunBattery.nullGun;
@@ -260,6 +261,14 @@ public class Ship {
 
   public void setPrimaryTurretLayout(String primaryTurretLayout) {
     this.primaryTurretLayout = primaryTurretLayout;
+  }
+
+  public String getTorpedoTubeLayout() {
+    return torpedoTubeLayout;
+  }
+
+  public void setTorpedoTubeLayout(String torpedoTubeLayout) {
+    this.torpedoTubeLayout = torpedoTubeLayout;
   }
 
   public String getNotes() {

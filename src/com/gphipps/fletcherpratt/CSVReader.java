@@ -37,7 +37,8 @@ public class CSVReader {
   private static final int TONNAGE = 17;
   private static final int TORPEDO_CLASS = 18;
   private static final int PRIMARY_TURRET_LAYOUT = 19;
-  private static final int NOTES = 20;
+  private static final int TORPEDO_TUBE_LAYOUT = 20;
+  private static final int NOTES = 21;
 
   private File outputDirectory;
 
@@ -131,6 +132,9 @@ public class CSVReader {
     theShip.setStandardDisplacement(toInt(sections[TONNAGE]));
     theShip.setTorpedoClass(sections[TORPEDO_CLASS]);
     theShip.setPrimaryTurretLayout(sections[PRIMARY_TURRET_LAYOUT].replaceAll("\"", ""));
+    if( sections[TORPEDO_TUBE_LAYOUT] != null ) {
+      theShip.setTorpedoTubeLayout(sections[TORPEDO_TUBE_LAYOUT].replaceAll("\"", ""));
+    }
     if( sections[NOTES] != null ) {
       theShip.setNotes(sections[NOTES].replaceAll("\"", ""));
     }

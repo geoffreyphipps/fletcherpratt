@@ -126,10 +126,13 @@ public class HTMLOutput implements OutputChannel {
 
         printWriter.print(SP_2 + ship.getPrimaryTurretLayout() + ",");
 
-        printWriter.print(SP_2 + "<b>Secondary: </b>" + ship.getSecondary().getInitialStatus(true) + " Broadside,");
+        printWriter.println(SP_2 + "<b>Secondary: </b>" + ship.getSecondary().getInitialStatus(true) + " Broadside");
+        p_end();
+        p();
 
         if( ship.getTorpedoTubes().getCurrentCount() > 0 ) {
-            printWriter.print(SP_2 + "<b>Torpedoes: </b>" + ship.getTorpedoTubes().getInitialStatus(true));
+            printWriter.print(SP_2 + "<b>Torps: </b>" + ship.getTorpedoTubes().getInitialStatus(true));
+            printWriter.print(SP_2  + ship.getTorpedoTubeLayout());
         }
         if( ship.getMines().getCurrentCount() > 0 ) {
             printWriter.print(SP_2 + ship.getMines().getInitialStatus(true));
