@@ -13,7 +13,7 @@ public class CSVOutput implements OutputChannel {
   }
 
   public void header(Ship ship) {
-    record( ship.getPoints(),"",ship.getInitialStatus());
+    record( ship.getClassicPoints(),"",ship.getInitialStatus());
   }
 
   public void footer() {

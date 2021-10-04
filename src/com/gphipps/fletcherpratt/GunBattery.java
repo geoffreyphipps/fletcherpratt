@@ -19,6 +19,10 @@ public final class GunBattery extends Reducing {
     return Math.floor(getTotalCount() * bore * bore);
   }
 
+  public double getFirePowerWeightedPoints() {
+    return Math.floor(getTotalCount() *  this.gunType.getDamage());
+  }
+
   public double getBore() {
     return bore;
   }

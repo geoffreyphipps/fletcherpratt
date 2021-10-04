@@ -18,7 +18,11 @@ public class Armour extends Feature {
     }
 
     public double getPoints() {
-      return 10*thickness*thickness;
+      return 10 * thickness * thickness;
+    }
+
+    public double getFirePowerWeightedPoints() {
+        return 10 * Math.pow(thickness, 1.5);
     }
 
     public String toString() {

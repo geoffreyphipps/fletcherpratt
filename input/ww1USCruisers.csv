@@ -1,17 +1,9 @@
-"Name"|"Class"|"Launched"|"Rebuilt"|"Nationality"|"Type"|"Primary Number"|"Primary Bore"|"Secondary Number"|"Secondary Bore"|"Torpedo Tubes"|"Belt"|"Deck"|"Turret"|"Mines"|"Aircraft"|"Speed"|"Tonnage"|"Torpedo Class"|"Main Turrets"|"Notes"
+"Name","Class","Launched","Rebuilt","Nationality","Type","Primary Number","Primary Bore","Secondary Number","Secondary Bore","Torpedo Tubes","Belt","Deck","Turret","Mines","Aircraft","Speed","Tonnage","Torpedo Class","Main Turrets","Notes"
 
-"Pittsburgh"|"Pittsburgh"|1905|1905|"USA"|"Armored Cruiser"|4|8|14|6|2|6|1.5|6.5|0|0|22|13680|"B"|"1F 1A"|"Submerged TT; ex-Pennsylvania"
-"Huntington"|"Pittsburgh"|1905|1905|"USA"|"Armored Cruiser"|4|8|14|6|2|6|1.5|6.5|0|0|22|13680|"B"|"1F 1A"|"Submerged TT; ex-West Virginia"
-"San Diego"|"Pittsburgh"|1907|1907|"USA"|"Armored Cruiser"|4|8|14|6|2|6|1.5|6.5|0|0|22|13680|"B"|"1F 1A"|"Submerged TT; ex-California"
-"Pueblo"|"Pittsburgh"|1905|1905|"USA"|"Armored Cruiser"|4|8|14|6|2|6|1.5|6.5|0|0|22|13680|"B"|"1F 1A"|"Submerged TT; ex-Colorado"
-"Frederick"|"Pittsburgh"|1905|1905|"USA"|"Armored Cruiser"|4|8|14|6|2|6|1.5|6.5|0|0|22|13680|"B"|"1F 1A"|"Submerged TT; ex-Maryland"
-"Huron"|"Pittsburgh"|1908|1908|"USA"|"Armored Cruiser"|4|8|14|6|2|6|1.5|6.5|0|0|22|13680|"B"|"1F 1A"|"Submerged TT; ex-South Dakota"
+"Pittsburgh (ex- Pennsylvannia), Huntington (ex-West Virginia), San Diego (ex-California), Pueblo (ex-Colorado), Frederick(ex-Maryland), Huron (ex-South Dakota), ","Pittsburgh",1905,1905,"USA","Armored Cruiser",4,8,14,6,2,6,1.5,6.5,0,0,22,13680,"B","1F 1A","1 Port, 1 Stbd, all submerged"
 
-"Memphis, Seattle, Charlotte, Missoula"|"Memphis"|1906|1906|"USA"|"Armored Cruiser"|4|10|16|6|4|5|1.5|9|0|0|22|14500|"B"|"1F 1A"|"Submerged TT; ex-Tennessee"
-"Seattle"|"Memphis"|1906|1906|"USA"|"Armored Cruiser"|4|10|16|6|4|5|1.5|9|0|0|22|14500|"B"|"1F 1A"|"Submerged TT; ex-Washington"
-"Charlotte"|"Memphis"|1906|1906|"USA"|"Armored Cruiser"|4|10|16|6|4|5|1.5|9|0|0|22|14500|"B"|"1F 1A"|"Submerged TT; ex-North Carolina"
-"Missoula"|"Memphis"|1906|1906|"USA"|"Armored Cruiser"|4|10|16|6|4|5|1.5|9|0|0|22|14500|"B"|"1F 1A"|"Submerged TT; ex-Montana"
+"Memphis (ex-Tennessee), Seattle (ex-Washington), Charlotte (ex-Memphiis), Missoula (ex-Montana)","Memphis",1906,1906,"USA","Armored Cruiser",4,10,16,6,4,5,1.5,9,0,0,22,14500,"B","1F 1A","2 Port, 2 Stbd, all submerged","Renamed states to cities in 1918"
 
-"St. Louis, Milwaukee, Charleston"|"St. Louis"|1906|1906|"USA"|"Protected Cruiser"|14|6|18|3|0|4|2|4|0|0|22|9700|"B"|"All casemate"|""
+"St. Louis, Milwaukee, Charleston","St. Louis",1906,1906,"USA","Protected Cruiser",14,6,18,3,0,4,2,4,0,0,22,9700,"B","All casemate"
 
-"Chester, Birmingham, Salem"|"Chester"|1908|1908|"USA"|"Scout Cruiser"|2|5|6|3|2|2|1|0|0|0|24|3750|"B"|"1F 1A"|"Submerged TT"
+"Chester, Birmingham, Salem","Chester",1908,1908,"USA","Scout Cruiser",2,5,6,3,2,2,1,0,0,0,24,3750,"B","1F 1A","1 Port, 1 Stbd, all submerged"

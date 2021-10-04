@@ -33,8 +33,7 @@ be necessary to include them if there was a battle involving
 both capital ships and torpedo boats, where the battleships large 
 number of 3" guns would be useful.
 
-Ships are organized vy class
-
+Ships are organized by class
 
 Armor is always taken to be the maximum value for that category in a published source.
 For example, belt armor typically tapers and might be quoted
@@ -80,14 +79,14 @@ if the midships turrets were not super-firing then it would be
 
 The Nelson and Rodney are
 
-2F 2F 2W
+2F 2F 2C
 
 If two turrets are at the same distance from the bow (only possible for Port and
 Starboard guns) then they are enclosed in parentheses. For example, a destroyer 
 with single-guns in centerline mounts, except for one pair of port and starboard
 guns:
 
-1F (1P 1S) 1W 1W 1A
+1F (1P 1S) 1C 1C 1A
 
 Many cruisers had no turreted main battery guns, all were in casemates.
 In this case the code is "All casemate" and therefore half the guns fire on each broadside,

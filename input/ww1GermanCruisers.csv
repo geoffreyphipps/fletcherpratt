@@ -1,11 +1,13 @@
-"Name"|"Class"|"Launched"|"Rebuilt"|"Nationality"|"Type"|"Primary Number"|"Primary Bore"|"Secondary Number"|"Secondary Bore"|"Torpedo Tubes"|"Belt"|"Deck"|"Turret"|"Mines"|"Aircraft"|"Speed"|"Tonnage"|"Torpedo Class"|"Main Turrets"|"Notes"
+"Name","Class","Launched","Rebuilt","Nationality","Type","Primary Number","Primary Bore","Secondary Number","Secondary Bore","Torpedo Tubes","Belt","Deck","Turret","Mines","Aircraft","Speed","Tonnage","Torpedo Class","Main Turrets","Notes"
 
-"Bremen, Hampburg, Berlin, Lübeck, München, Danzig, Leipzig"|"Bremen"|1904|1904|"German"|"Light Cruiser"|10|4.1|0|0|2|0|2|0|0|0|23|3250|"C"|"All casemate"|"Submerged TT"
+"Bremen, Leipzig, Hampburg, Berlin, Lübeck, München, Danzig","Bremen",1904,1904,"German","Light Cruiser",10,4.1,0,0,2,1.5,2,0,0,0,23,3250,"C","All casemate","1 Port, 1 Stbd, all submerged",
 
-"Emden, Dresden"|"Dresden"|1907|1907|"German"|"Light Cruiser"|10|4.1|0|0|2|2|0.5|0|0|0|23|3364|"C"|"All casemate"|"Submerged TT"
+"Königsberg, Nürnberg, Stuttgart, Stettin","Königsberg",1905,1905,"German","Light Cruiser",10,4.1,0,0,2,2,2,0,0,0,23,3364,"C","All casemate","1 Port, 1 Stbd, all submerged",
 
-"Magdeburg, Breslau, Strassburg, Stralsund"|"Magdeburg"|1912|1912|"German"|"Light Cruiser"|12|4.1|0|0|2|2.25|2.25|0|120|0|28|4362|"C"|"All casemate"|"Submerged TT"
+"Emden, Dresden","Dresden",1907,1907,"German","Light Cruiser",10,4.1,0,0,2,2.6,2,0,0,0,23,3364,"C","All casemate","1 Port, 1 Stbd, all submerged",
 
-"Strassburg-1916, Stralsund-1916, Breslau-1916"|"Strassburg 1916"|1912|1916|"German"|"Light Cruiser"|7|5.9|0|0|2|2.25|2.25|0|120|0|28|4362|"C"|"All casemate"|"Submerged TT"
+"Magdeburg, Breslau, Strassburg, Stralsund","Magdeburg",1912,1912,"German","Light Cruiser",12,4.1,0,0,2,3.5,2.0,0,120,0,28,4362,"C","All casemate","1 Port, 1 Stbd, all submerged",
 
-"Wiesbaden, Frankfürt"|"Wiesbaden"|1915|1915|"German"|"Light Cruiser"|8|5.9|0|0|4|2.25|1.6|0|120|0|28|5180|"C"|"All casemate"|"Submerged TT"
+"Strassburg-1916, Stralsund-1916, Breslau-1916","Strassburg 1916",1912,1916,"German","Light Cruiser",7,5.9,0,0,2,3.5,2.0,0,120,0,28,4362,"C","All casemate","1 Port, 1 Stbd, all submerged",
+
+"Wiesbaden, Frankfürt","Wiesbaden",1915,1915,"German","Light Cruiser",8,5.9,0,0,4,2.25,1.6,0,120,0,28,5180,"C","All casemate","2 Port, 2 Stbd, half submerged",

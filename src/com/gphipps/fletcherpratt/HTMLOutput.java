@@ -118,7 +118,7 @@ public class HTMLOutput implements OutputChannel {
     }
 
     private void printPoints(Ship ship) {
-        printWriter.print(String.format("<b>Points:</b> %,d ", ship.getPoints()));
+        printWriter.print(String.format("<b>Points:</b> %,d ", ship.getClassicPoints()));
     }
 
     private void printWeapons(Ship ship) {

@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.util.Iterator;
+import java.util.List;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
@@ -15,7 +16,7 @@ import org.apache.commons.csv.CSVRecord;
  */
 public class CSVReader {
 
-  private static final char DELIMITER = '|';
+  private static final char DELIMITER = ',';
 
   private static final int NAME = 0;
   private static final int CLASS = 1;
@@ -94,6 +95,7 @@ public class CSVReader {
             asArray[0]= shipName.trim();
             Ship ship = readShip(asArray);
             ship.createShipLog(new HTMLOutput(getOutputDirectory().getPath() + File.separatorChar + ship.getName()));
+            List<String> fields = ship.getSummaryLine();
           }
         }
       }

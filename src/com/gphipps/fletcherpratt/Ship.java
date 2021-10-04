@@ -1,7 +1,8 @@
 package com.gphipps.fletcherpratt;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.TreeSet;
 
 public class Ship {
@@ -38,19 +39,42 @@ public class Ship {
     this.setRebuilt(rebuilt);
   }
 
-  public int getPoints() {
+  public int getFirepowerWeightedPoints() {
+    return getFirepowerWeightedPoints(40);
+  }
+
+  public int getFirepowerWeightedPoints( double divisor ) {
+    double classic = speed.getPoints() *
+            ( getPrimary().getFirePowerWeightedPoints()  +
+                    getBelt().getFirePowerWeightedPoints() + 0.5 * getDeck().getFirePowerWeightedPoints() + getStandardDisplacement());
+    return (int) Math.floor(classic/divisor);
+  }
+
+  public int getClassicPoints() {
+    return getClassicPoints(40);
+  }
+
+  public int getClassicPoints( double divisor) {
     double classic = speed.getPoints() *
             ( getPrimary().getPoints() + getSecondary().getPoints() + getTorpedoTubes().getPoints() +
               getBelt().getPoints() + getTurret().getPoints() + getDeck().getPoints() +
               getAircraft().getPoints() + getMines().getPoints() ) + getStandardDisplacement();
-    return (int) Math.floor(classic/40.0);
+    return (int) Math.floor(classic/divisor);
+  }
+
+  /**
+   * Name, Type, Nationality, Total Primary Damage, Displacement, New Points, OriginalPoints
+   * @return
+   */
+  public List<String> getSummaryLine() {
+    return  Arrays.asList( "a","b" );
   }
 
   /**
    * Prints an HTML ship log
    */
   public void createShipLog(OutputChannel channel) {
-    int totalPoints = getPoints();
+    int totalPoints = getClassicPoints();
     primary.setTotalPoints(totalPoints);
     secondary.setTotalPoints(totalPoints);
     torpedoTubes.setTotalPoints(totalPoints);
