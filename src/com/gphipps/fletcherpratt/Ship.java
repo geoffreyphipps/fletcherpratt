@@ -1,8 +1,5 @@
 package com.gphipps.fletcherpratt;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 import java.util.TreeSet;
 
 public class Ship {
@@ -39,35 +36,44 @@ public class Ship {
     this.setRebuilt(rebuilt);
   }
 
-  public int getFirepowerWeightedPoints() {
-    return getFirepowerWeightedPoints(40);
-  }
+  private static final double DIVISOR = 40.0;
 
-  public int getFirepowerWeightedPoints( double divisor ) {
+  public int getFirepowerWeightedPoints() {
     double classic = speed.getPoints() *
             ( getPrimary().getFirePowerWeightedPoints()  +
-                    getBelt().getFirePowerWeightedPoints() + 0.5 * getDeck().getFirePowerWeightedPoints() + getStandardDisplacement());
-    return (int) Math.floor(classic/divisor);
+                    getBelt().getNewDefensivePoints() + 0.5 * getDeck().getNewDefensivePoints() + getStandardDisplacement());
+    return (int) Math.floor(classic/DIVISOR);
+  }
+
+  public int getNewDefensivePoints() {
+    double points =// Math.pow(speed.getTotalCount(), 0.3) *
+            ( getBelt().getNewDefensivePoints() +
+                    0.5 * getDeck().getNewDefensivePoints() +
+                    0.3 * getTurret().getNewDefensivePoints() )
+            + Math.pow(getStandardDisplacement(), 0.7);
+    return (int) Math.floor(40*points/DIVISOR);
   }
 
   public int getClassicPoints() {
-    return getClassicPoints(40);
-  }
-
-  public int getClassicPoints( double divisor) {
     double classic = speed.getPoints() *
             ( getPrimary().getPoints() + getSecondary().getPoints() + getTorpedoTubes().getPoints() +
-              getBelt().getPoints() + getTurret().getPoints() + getDeck().getPoints() +
-              getAircraft().getPoints() + getMines().getPoints() ) + getStandardDisplacement();
-    return (int) Math.floor(classic/divisor);
+              getBelt().getPoints() + getDeck().getPoints() + getTurret().getPoints() +
+              getAircraft().getPoints() + getMines().getPoints() ) +
+            getStandardDisplacement();
+    return (int) Math.floor(classic/DIVISOR);
+  }
+
+  public int getPrimaryDamage() {
+    return getPrimary().getTotalDamage();
   }
 
   /**
-   * Name, Type, Nationality, Total Primary Damage, Displacement, New Points, OriginalPoints
+   * Name, Type, Class, Nationality, Displacement, Classic Points, New Defensive Points, Total Primary Damage
    * @return
    */
-  public List<String> getSummaryLine() {
-    return  Arrays.asList( "a","b" );
+  public String getSummaryLine() {
+    return name + "," + type + "," + klass + "," + nationality + "," +
+            standardDisplacement + "," + getClassicPoints() + "," + getNewDefensivePoints() + "," + getPrimaryDamage();
   }
 
   /**

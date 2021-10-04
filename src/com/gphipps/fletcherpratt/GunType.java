@@ -72,7 +72,6 @@ public class GunType {
 
     public static GunType findByBore(double bore) {
         return gunTypes.get(Double.toString(bore));
-//        return gunTypes.get(Double.toString(13.5));
     }
 
     public double getBore() {
@@ -86,5 +85,4 @@ public class GunType {
     public int getDamage() {
         return damage;
     }
-
 }

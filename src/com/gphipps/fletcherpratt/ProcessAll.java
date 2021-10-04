@@ -1,6 +1,9 @@
 package com.gphipps.fletcherpratt;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 
 /**
  * Reads all the CSVs in the first argument.
@@ -10,19 +13,23 @@ import java.io.File;
  */
 public class ProcessAll {
 
-    public static void main(String args[]) {
+    public static void main(String args[]) throws FileNotFoundException, UnsupportedEncodingException {
         CSVReader reader = new CSVReader();
         File inputDir = new File(args[0]);
-        File[] inputFiles = inputDir.listFiles();
+        File[] inputCSVFiles = inputDir.listFiles();
         // Find all csv files in dir
 
         File outputRootDir = new File(args[1]);
+        outputRootDir.mkdir();
+        File summaryOutputFile = new File(outputRootDir.getPath() +  File.separatorChar +  "summary.csv");
+        PrintWriter summaryPrintWriter = new PrintWriter(summaryOutputFile, "UTF8");
+        summaryPrintWriter.println("Name, Class, Class, Nationality, Displacement, Classic Points, New Defensive Points, Total Primary Damage");
 
-        for( File file : inputFiles ) {
-            if( file.getPath().endsWith(".csv")) {
-                File outputDir = new File(outputRootDir.getPath() + File.separatorChar + file.getName().replace(".csv", ""));
+        for( File CSVFile : inputCSVFiles ) {
+            if( CSVFile.getPath().endsWith(".csv")) {
+                File outputDir = new File(outputRootDir.getPath() + File.separatorChar + CSVFile.getName().replace(".csv", ""));
                 outputDir.mkdir();
-                reader.processFile(file.getPath(), outputDir.getPath());
+                reader.processFile(CSVFile.getPath(), outputDir.getPath(), summaryPrintWriter);
             }
         }
     }

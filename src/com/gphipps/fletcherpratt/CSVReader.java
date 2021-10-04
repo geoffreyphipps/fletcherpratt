@@ -2,6 +2,7 @@ package com.gphipps.fletcherpratt;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.nio.charset.Charset;
 import java.util.Iterator;
 import java.util.List;
@@ -10,10 +11,7 @@ import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
 
-/**
- *
- * 
- */
+
 public class CSVReader {
 
   private static final char DELIMITER = ',';
@@ -47,7 +45,7 @@ public class CSVReader {
    *  Reads a CSV file full of ship definitions and prints their logs.
    *  The inner loop that does the work.
    */
-  public void processFile(String fleetInputFileName, String outputDirectoryName ) {
+  public void processFile(String fleetInputFileName, String outputDirectoryName, PrintWriter summaryPrintWriter) {
     CSVParser parser;
     try {
       parser = CSVParser.parse(new File(fleetInputFileName), Charset.defaultCharset(), CSVFormat.RFC4180.withDelimiter(DELIMITER));
@@ -95,7 +93,8 @@ public class CSVReader {
             asArray[0]= shipName.trim();
             Ship ship = readShip(asArray);
             ship.createShipLog(new HTMLOutput(getOutputDirectory().getPath() + File.separatorChar + ship.getName()));
-            List<String> fields = ship.getSummaryLine();
+            String fields = ship.getSummaryLine();
+            summaryPrintWriter.println(fields);
           }
         }
       }
@@ -154,18 +153,6 @@ public class CSVReader {
 
   private double toDouble(String s) {
     return Double.parseDouble(s);
-  }
-
-  /**
-   * This is the main to use.
-   * First argument is the path to a fleet data file (CSV file of ships, one per line).
-   * Second argument is path to output directory
-   * @param args
-   */
-  public static void main(String args[]) {
-    CSVReader reader = new CSVReader();
-
-    reader.processFile(args[0], args[1]);
   }
 
   public File getOutputDirectory() {
