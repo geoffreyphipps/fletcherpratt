@@ -23,7 +23,7 @@ public class ProcessAll {
         outputRootDir.mkdir();
         File summaryOutputFile = new File(outputRootDir.getPath() +  File.separatorChar +  "summary.csv");
         PrintWriter summaryPrintWriter = new PrintWriter(summaryOutputFile, "UTF8");
-        summaryPrintWriter.println("Name, Class, Class, Nationality, Displacement, Classic Points, New Defensive Points, Total Primary Damage");
+        summaryPrintWriter.println("Name, Class, Class, Nationality, Displacement, Classic Points, New Defensive Points, Std Primary Damage, Scenario Points");
 
         for( File CSVFile : inputCSVFiles ) {
             if( CSVFile.getPath().endsWith(".csv")) {

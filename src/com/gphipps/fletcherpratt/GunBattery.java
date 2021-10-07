@@ -42,6 +42,10 @@ public final class GunBattery extends Reducing {
     return getTotalCount() * gunType.getDamage();
   }
 
+  public boolean isNull() {
+    return gunType == GunType.NULL_GUN;
+  }
+
   protected String getStatusStringInternal( int i) {
     if (this == nullGun || this.getTotalCount() == 0 ) {
       return "";

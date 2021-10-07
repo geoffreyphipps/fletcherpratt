@@ -29,13 +29,9 @@ public class HTMLOutput implements OutputChannel {
         printHeadingLine(ship, nbsps);
 
         // First Line
-//          p();
-//        printKlassInformation(ship);
-//          p_end();
-
-        // Second line
           p();
         printPoints(ship);
+        printWriter.println(SP_2+SP_2);
         printSpeed(ship);
           p_end();
 
@@ -118,15 +114,19 @@ public class HTMLOutput implements OutputChannel {
     }
 
     private void printPoints(Ship ship) {
-        printWriter.print(String.format("<b>Points:</b> %,d ", ship.getClassicPoints()));
+        printWriter.print(String.format("<b>Classic Points:</b> %,d ", ship.getClassicPoints()));
+        printWriter.print(String.format(SP_2 + "<b>Defensive:</b> %,d ", ship.getNewDefensivePoints()));
+        printWriter.print(String.format(SP_2 + "<b>Balance:</b> %,d ", ship.getBalancePoints()));
     }
 
     private void printWeapons(Ship ship) {
         printWriter.print("<b>Batteries:</p><p>" + SP_2 + "Primary: </b>" + ship.getPrimary().getInitialStatus(true));
 
-        printWriter.print(SP_2 + ship.getPrimaryTurretLayout() + ",");
+        printWriter.print(SP_2 + ship.getPrimaryTurretLayout() );
 
-        printWriter.println(SP_2 + "<b>Secondary: </b>" + ship.getSecondary().getInitialStatus(true) + " Broadside");
+        if( ! ship.getSecondary().isNull()) {
+            printWriter.println("," + SP_2 + "<b>Secondary: </b>" + ship.getSecondary().getInitialStatus(true) + " Broadside");
+        }
         p_end();
         p();
 
@@ -160,7 +160,9 @@ public class HTMLOutput implements OutputChannel {
         printWriter.println("    </tr>");
 
         printGunType( ship.getPrimary().getGunType() );
-        printGunType( ship.getSecondary().getGunType());
+        if( ! ship.getSecondary().isNull()) {
+            printGunType(ship.getSecondary().getGunType());
+        }
         printWriter.println("  </table>");
 
     }

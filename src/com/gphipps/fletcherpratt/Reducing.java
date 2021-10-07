@@ -115,4 +115,11 @@ public abstract class Reducing extends Feature implements Comparable {
   public String toString() {
     return getDescription() + " " + getCurrentBreakPoint() + " " + getCurrentCount();
   }
+
+  /**
+   * True if this is not present, e.g. secondary batteries or torpedo tubes
+   */
+  public boolean isNull() {
+    return false;
+  }
 }

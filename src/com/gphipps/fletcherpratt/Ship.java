@@ -49,7 +49,7 @@ public class Ship {
     double points =// Math.pow(speed.getTotalCount(), 0.3) *
             ( getBelt().getNewDefensivePoints() +
                     0.5 * getDeck().getNewDefensivePoints() +
-                    0.3 * getTurret().getNewDefensivePoints() )
+                    0.2 * getTurret().getNewDefensivePoints() )
             + Math.pow(getStandardDisplacement(), 0.7);
     return (int) Math.floor(40*points/DIVISOR);
   }
@@ -63,8 +63,12 @@ public class Ship {
     return (int) Math.floor(classic/DIVISOR);
   }
 
-  public int getPrimaryDamage() {
+  public int getPrimaryDamagePoints() {
     return getPrimary().getTotalDamage();
+  }
+
+  public int getBalancePoints() {
+    return getPrimaryDamagePoints() + getNewDefensivePoints();
   }
 
   /**
@@ -73,7 +77,8 @@ public class Ship {
    */
   public String getSummaryLine() {
     return name + "," + type + "," + klass + "," + nationality + "," +
-            standardDisplacement + "," + getClassicPoints() + "," + getNewDefensivePoints() + "," + getPrimaryDamage();
+            standardDisplacement + "," + getClassicPoints() + "," +
+            getNewDefensivePoints() + "," + getPrimaryDamagePoints() + "," + getBalancePoints();
   }
 
   /**
