@@ -23,21 +23,26 @@ public class ProcessAll {
         outputRootDir.mkdir();
         File summaryOutputFile = new File(outputRootDir.getPath() +  File.separatorChar +  "fletcher_pratt_summary.csv");
         PrintWriter summaryPrintWriter = new PrintWriter(summaryOutputFile, "UTF8");
+
+        File shipLabelsFile = new File(outputRootDir.getPath() +  File.separatorChar +  "fletcher_pratt_ship_labels.csv");
+        PrintWriter shipLabelsPrintWriter = new PrintWriter(shipLabelsFile, "UTF8");
         summaryPrintWriter.println(
                 "Name, Class, Nationality, Type, " +
                         "Primary Number, Primary Bore, Secondary Number, Secondary Bore, Torpedo Tubes," +
                         "Belt, Deck, Turret, " +
                         "Speed, Displacement, " +
                         "Classic Points, New Defensive Points, Std Primary Damage, Torpedo Damage, Scenario Points");
-
+        shipLabelsPrintWriter.println("class, name, class, name, class, name, class, name, class, name, class, name");
         for( File CSVFile : inputCSVFiles ) {
             if( CSVFile.getPath().endsWith(".csv")) {
                 File outputDir = new File(outputRootDir.getPath() + File.separatorChar + CSVFile.getName().replace(".csv", ""));
                 outputDir.mkdir();
-                reader.processFile(CSVFile.getPath(), outputDir.getPath(), summaryPrintWriter);
+                reader.processFile(CSVFile.getPath(), outputDir.getPath(), summaryPrintWriter, shipLabelsPrintWriter);
+                shipLabelsPrintWriter.println();
             }
         }
         summaryPrintWriter.close();
+        shipLabelsPrintWriter.close();
     }
 
 }

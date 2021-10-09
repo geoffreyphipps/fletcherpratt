@@ -44,7 +44,8 @@ public class CSVReader {
    *  Reads a CSV file full of ship definitions and prints their logs.
    *  The inner loop that does the work.
    */
-  public void processFile(String fleetInputFileName, String outputDirectoryName, PrintWriter summaryPrintWriter) {
+  public void processFile(String fleetInputFileName, String outputDirectoryName,
+                          PrintWriter summaryPrintWriter, PrintWriter shipLabelsPrintWriter) {
     CSVParser parser;
     try {
       parser = CSVParser.parse(new File(fleetInputFileName), Charset.defaultCharset(), CSVFormat.RFC4180.withDelimiter(DELIMITER));
@@ -69,6 +70,7 @@ public class CSVReader {
     int lineNumber = 0;
     String line = "";
     Set<String> klassesSummarised = new HashSet<String>(50);
+    int shipLabelsCounter = 0;
     try {
       for( CSVRecord csvRecord : parser ) {
         lineNumber++;
@@ -96,6 +98,13 @@ public class CSVReader {
               klassesSummarised.add(ship.getKlass());
               String fields = ship.getSummaryLine();
               summaryPrintWriter.println(fields);
+            }
+            shipLabelsPrintWriter.print( ship.getKlass() +"," + ship.getName() + "," );
+            if( shipLabelsCounter > 4 ) {
+              shipLabelsCounter = 0;
+              shipLabelsPrintWriter.println();
+            } else {
+              shipLabelsCounter++;
             }
           }
         }
