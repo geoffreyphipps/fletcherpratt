@@ -125,7 +125,7 @@ public class HTMLOutput implements OutputChannel {
         printWriter.print(SP_2 + ship.getPrimaryTurretLayout() );
 
         if( ! ship.getSecondary().isNull()) {
-            printWriter.println("," + SP_2 + "<b>Secondary: </b>" + ship.getSecondary().getInitialStatus(true) + " Broadside");
+            printWriter.println(SP_2 + SP_2 + "<b>Secondary: </b>" + ship.getSecondary().getInitialStatus(true) + " Broadside");
         }
         p_end();
         p();

@@ -67,13 +67,17 @@ public class Ship {
     return getPrimary().getTotalDamage();
   }
 
+  public int getTorpedoPoints() {
+    // TODO Account for submerged vs centerline (worth more if centerline), and size
+    return getTorpedoTubes().getTotalCount() * 10;
+  }
+
   public int getBalancePoints() {
-    return getPrimaryDamagePoints() + getNewDefensivePoints();
+    return getPrimaryDamagePoints() + getTorpedoPoints() + getNewDefensivePoints();
   }
 
   /**
    * Name, Type, Class, Nationality, Displacement, Classic Points, New Defensive Points, Total Primary Damage
-   * @return
    */
   public String getSummaryLine() {
     return name + "," + klass + "," + nationality + "," + type +  ","  +
@@ -83,7 +87,7 @@ public class Ship {
             belt + "," + deck + "," + turret + "," +
             speed.getTotalCount() + "," + standardDisplacement + "," +
             getClassicPoints() + "," +
-            getNewDefensivePoints() + "," + getPrimaryDamagePoints() + "," + getBalancePoints();
+            getNewDefensivePoints() + "," + getPrimaryDamagePoints() + "," + getTorpedoPoints() + "," + getBalancePoints();
   }
 
   /**

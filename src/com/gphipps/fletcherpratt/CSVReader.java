@@ -4,8 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.nio.charset.Charset;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
@@ -69,9 +68,9 @@ public class CSVReader {
     System.out.println("Writing to '" + getOutputDirectory() + "'");
     int lineNumber = 0;
     String line = "";
+    Set<String> klassesSummarised = new HashSet<String>(50);
     try {
       for( CSVRecord csvRecord : parser ) {
-        //LOGGER.debug( "Line number " + lineNumber +"<" + line +">" );
         lineNumber++;
 
         // blank line
@@ -93,7 +92,8 @@ public class CSVReader {
             asArray[0]= shipName.trim();
             Ship ship = readShip(asArray);
             ship.createShipLog(new HTMLOutput(getOutputDirectory().getPath() + File.separatorChar + ship.getName()));
-            if( ship.isLeadShipInClass() ) {
+            if( ! klassesSummarised.contains(ship.getKlass()) ) {
+              klassesSummarised.add(ship.getKlass());
               String fields = ship.getSummaryLine();
               summaryPrintWriter.println(fields);
             }

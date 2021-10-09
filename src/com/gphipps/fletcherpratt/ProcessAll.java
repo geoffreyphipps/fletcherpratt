@@ -28,7 +28,7 @@ public class ProcessAll {
                         "Primary Number, Primary Bore, Secondary Number, Secondary Bore, Torpedo Tubes," +
                         "Belt, Deck, Turret, " +
                         "Speed, Displacement, " +
-                        "Classic Points, New Defensive Points, Std Primary Damage, Scenario Points");
+                        "Classic Points, New Defensive Points, Std Primary Damage, Torpedo Damage, Scenario Points");
 
         for( File CSVFile : inputCSVFiles ) {
             if( CSVFile.getPath().endsWith(".csv")) {
