@@ -50,7 +50,7 @@ public class Ship {
             ( getBelt().getNewDefensivePoints() +
                     0.5 * getDeck().getNewDefensivePoints() +
                     0.2 * getTurret().getNewDefensivePoints() )
-            + Math.pow(getStandardDisplacement(), 0.7);
+            + Math.pow(getStandardDisplacement(), 0.65);
     return (int) Math.floor(40*points/DIVISOR);
   }
 
@@ -76,8 +76,13 @@ public class Ship {
    * @return
    */
   public String getSummaryLine() {
-    return name + "," + type + "," + klass + "," + nationality + "," +
-            standardDisplacement + "," + getClassicPoints() + "," +
+    return name + "," + klass + "," + nationality + "," + type +  ","  +
+            primary.getTotalCount() + "," + primary.getBore() + "," +
+            secondary.getTotalCount() + "," + secondary.getBore() + "," +
+            torpedoTubes.getTotalCount() + "," +
+            belt + "," + deck + "," + turret + "," +
+            speed.getTotalCount() + "," + standardDisplacement + "," +
+            getClassicPoints() + "," +
             getNewDefensivePoints() + "," + getPrimaryDamagePoints() + "," + getBalancePoints();
   }
 
@@ -312,5 +317,9 @@ public class Ship {
 
   public void setNotes(String notes) {
     this.notes = notes;
+  }
+
+  public boolean isLeadShipInClass() {
+    return name.equals(klass);
   }
 }

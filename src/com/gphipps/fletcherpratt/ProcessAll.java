@@ -21,9 +21,14 @@ public class ProcessAll {
 
         File outputRootDir = new File(args[1]);
         outputRootDir.mkdir();
-        File summaryOutputFile = new File(outputRootDir.getPath() +  File.separatorChar +  "summary.csv");
+        File summaryOutputFile = new File(outputRootDir.getPath() +  File.separatorChar +  "fletcher_pratt_summary.csv");
         PrintWriter summaryPrintWriter = new PrintWriter(summaryOutputFile, "UTF8");
-        summaryPrintWriter.println("Name, Class, Class, Nationality, Displacement, Classic Points, New Defensive Points, Std Primary Damage, Scenario Points");
+        summaryPrintWriter.println(
+                "Name, Class, Nationality, Type, " +
+                        "Primary Number, Primary Bore, Secondary Number, Secondary Bore, Torpedo Tubes," +
+                        "Belt, Deck, Turret, " +
+                        "Speed, Displacement, " +
+                        "Classic Points, New Defensive Points, Std Primary Damage, Scenario Points");
 
         for( File CSVFile : inputCSVFiles ) {
             if( CSVFile.getPath().endsWith(".csv")) {
@@ -32,6 +37,7 @@ public class ProcessAll {
                 reader.processFile(CSVFile.getPath(), outputDir.getPath(), summaryPrintWriter);
             }
         }
+        summaryPrintWriter.close();
     }
 
 }

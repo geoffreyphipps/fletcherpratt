@@ -93,8 +93,10 @@ public class CSVReader {
             asArray[0]= shipName.trim();
             Ship ship = readShip(asArray);
             ship.createShipLog(new HTMLOutput(getOutputDirectory().getPath() + File.separatorChar + ship.getName()));
-            String fields = ship.getSummaryLine();
-            summaryPrintWriter.println(fields);
+            if( ship.isLeadShipInClass() ) {
+              String fields = ship.getSummaryLine();
+              summaryPrintWriter.println(fields);
+            }
           }
         }
       }
