@@ -94,7 +94,7 @@ public class Ship {
    * Prints an HTML ship log
    */
   public void createShipLog(OutputChannel channel) {
-    int totalPoints = getClassicPoints();
+    int totalPoints = getNewDefensivePoints();
     primary.setTotalPoints(totalPoints);
     secondary.setTotalPoints(totalPoints);
     torpedoTubes.setTotalPoints(totalPoints);
