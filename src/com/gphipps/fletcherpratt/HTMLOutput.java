@@ -39,6 +39,10 @@ public class HTMLOutput implements OutputChannel {
         printArmorLine(ship);
         p_end();
 
+        p();
+        printTorpedoDamageLine(ship);
+        p_end();
+
           p();
         printWeapons(ship);
           p_end();
@@ -146,34 +150,55 @@ public class HTMLOutput implements OutputChannel {
     private void printGunTypes(Ship ship) {
         printWriter.println("  <table width=\"80% \"cellpadding=\"1\">");
         printWriter.println("    <tr>");
-        printWriter.println("      <th colspan=\"1\" class=\"guns-header-multispan\"></th>");
-        printWriter.println("      <th colspan=\"3\" class=\"guns-header-multispan\">Range</th>");
-        printWriter.println("      <th colspan=\"2\" class=\"guns-header-multispan\">Damage</th>");
+        printWriter.println("      <th colspan=\"1\" class=\"guns-header-multispan\" rowspan=\"2\"></th>");
+        printWriter.println("      <th colspan=\"6\" class=\"guns-header-multispan\">Range</th>");
+        printWriter.println("      <th colspan=\"2\" rowspan=\"2\" class=\"guns-header-multispan\">Damage</th>");
         printWriter.println("    </tr>");
         printWriter.println("    <tr>");
-        printWriter.println("      <th class=\"guns-header\">Caliber</th> ");
-        printWriter.println("      <th class=\"guns-header\">Max</th>");
-        printWriter.println("      <th class=\"guns-header\">Half</th>");
-        printWriter.println("      <th class=\"guns-header\">Close</th>");
+        printWriter.println("      <th class=\"guns-header\"colspan=\"2\">Deck</th>");
+        printWriter.println("      <th class=\"guns-header\" colspan=\"4\">Belt</th>");
+        printWriter.println("    </tr>");
+        printWriter.println("    <tr>");
+        printWriter.println("      <th class=\"guns-header\">Bore</th>");
+        printWriter.println("      <th class=\"guns-header\">Long</th>");
+        printWriter.println("      <th class=\"guns-header\">Over</th>");
+        printWriter.println("      <th class=\"guns-header\">Medium</th>");
+        printWriter.println("      <th class=\"guns-header\">Over</th>");
+        printWriter.println("      <th class=\"guns-header\">Short</th>");
+        printWriter.println("      <th class=\"guns-header\">Over</th>");
         printWriter.println("      <th class=\"guns-header\">Penetrating</th>");
         printWriter.println("      <th class=\"guns-header\">Non-Penetrating </th>");
         printWriter.println("    </tr>");
 
-        printGunType( ship.getPrimary().getGunType() );
+        printGunType( ship.getPrimary().getGunType(), true );
         if( ! ship.getSecondary().isNull()) {
-            printGunType(ship.getSecondary().getGunType());
+            printGunType(ship.getSecondary().getGunType(), false);
         }
         printWriter.println("  </table>");
-
     }
 
-    private void printGunType(GunType gt) {
+    private void printGunType(GunType gt, boolean printOvers) {
         int r = gt.getMaxRange();
         printWriter.println("    <tr>");
-        printWriter.println("      <td class=\"guns\">" + gt.getBore() + "\"</th> ");
-        printWriter.println("      <td class=\"guns\">" + r + "</th> ");
-        printWriter.println("      <td class=\"guns\">" + r/2 + "</th>");
-        printWriter.println("      <td class=\"guns\">" + r/4 + "</th>");
+        printWriter.println("      <td class=\"guns\">" + gt.getBore() + "\"</th>");
+        printWriter.println("      <td class=\"guns\">" + r + "\"" + "</th>");
+        if( printOvers) {
+            printWriter.println("      <td class=\"guns\">" + "1/4\"" + "</th>");
+        } else {
+            printWriter.println("      <td class=\"guns\">" + "–" + "</th>");
+        }
+        printWriter.println("      <td class=\"guns\">" + 3*r/4 + "\"" + "</th>");
+        if( printOvers) {
+            printWriter.println("      <td class=\"guns\">" + "1/2\"" + "</th>");
+        } else {
+            printWriter.println("      <td class=\"guns\">" + "–" + "</th>");
+        }
+        printWriter.println("      <td class=\"guns\">" + r/4 + "\"" + "</th>");
+        if( printOvers) {
+            printWriter.println("      <td class=\"guns\">" + "1\"" + "</th>");
+        } else {
+            printWriter.println("      <td class=\"guns\">" + "–" + "</th>");
+        }
         printWriter.println("      <td class=\"guns\">" + gt.getDamage() + "</th>");
         printWriter.println("      <td class=\"guns\">" + gt.getDamage()/2 + "</th>");
         printWriter.println("    </tr>");
@@ -184,15 +209,41 @@ public class HTMLOutput implements OutputChannel {
     }
 
     private void printArmorLine(Ship ship) {
-        printWriter.println("  <b>Armor: </b>Belt " + ship.getBelt() + ",&nbsp;&nbsp; Deck " + ship.getDeck() + ",&nbsp;&nbsp; Turret: " + ship.getTurret());
+        printWriter.println("  <b>Armor: </b>Belt " + ship.getBelt() + ",&nbsp;&nbsp; Deck " + ship.getDeck());
+    }
 
-        printWriter.println("&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>Torpedo Class:</b> " + ship.getTorpedoClass() );
+    private void  printTorpedoDamageLine(Ship ship) {
+        printWriter.println("<b>Torpedo Defense:</b> " + ship.getTorpedoClass() );
+        printWriter.println("</p> <p>" );
+        printWriter.println("  <table width=\"80% \"cellpadding=\"2\">");
+        printWriter.println("    <tr>");
+        printWriter.println("      <th width=\"20%\" class=\"guns-header\">1st Hit</th>");
+        printWriter.println("      <th width=\"20%\" class=\"guns-header\">2nd Hit</th>");
+        printWriter.println("      <th width=\"20%\" class=\"guns-header\">3rd Hit</th>");
+        printWriter.println("      <th width=\"20%\" class=\"guns-header\">4th Hit</th>");
+        printWriter.println("      <th width=\"20%\" class=\"guns-header\">5th Hit</th>");
+        printWriter.println("    </tr>");
+
+        printWriter.println("    <tr>");
+        for( int hitHumber = 0; hitHumber < TorpedoTubes.MAX_TORPEDO_HITS; hitHumber++ ) {
+            int points = (int) (ship.getNewDefensivePoints() * TorpedoTubes.getPercentageDamage(ship.getTorpedoClass(), hitHumber)) +1;
+            if( points >= ship.getNewDefensivePoints() ) {
+                printWriter.print("      <td class=\"guns\">" + "Sunk" + "</td>");
+            } else {
+
+                printWriter.print("      <td class=\"guns\">" + points + "</td>");
+            }
+        }
+        printWriter.println("    </tr>");
+        printWriter.println("  </table>");
     }
 
     private void startDamageTable() {
         printWriter.println("  <table width=\"80% \"cellpadding=\"2\">");
         printWriter.println("    <tr>");
-        printWriter.println("      <th width=\"15%\">Damage</th><th width=\"55%\">Status</th><th width=\"30%\">Loss</th>");
+        printWriter.println("      <th width=\"15%\">Damage</th>");
+        printWriter.println("      <th width=\"55%\">Status</th>");
+        printWriter.println("      <th width=\"30%\">Loss</th>");
         printWriter.println("    </tr>");
     }
 
