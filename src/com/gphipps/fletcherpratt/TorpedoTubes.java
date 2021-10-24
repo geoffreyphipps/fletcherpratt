@@ -29,7 +29,10 @@ public class TorpedoTubes extends Reducing {
   }
 
   public static double getPercentageDamage(String torpedoClass, int hitNumber) {
-    List<Double> hitList =  torpedoDamage.get(torpedoClass);
+    List<Double> hitList = torpedoDamage.get(torpedoClass);
+    if( hitList == null ) {
+      System.out.println( "Torpedo Class not Found _" + torpedoClass +"_");
+    }
     return hitList.get(hitNumber);
   }
 

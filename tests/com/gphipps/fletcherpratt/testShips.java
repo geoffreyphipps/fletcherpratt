@@ -12,8 +12,8 @@ public class testShips {
 
     public void testLaArgentina(String args[]) throws FileNotFoundException, IOException {
         Ship laArgentina = new Ship("La Argentina","Example", "1912", "1923");
-        laArgentina.setPrimary(new GunBattery(9, 6));
-        laArgentina.setSecondary(new GunBattery(4, 4));
+        laArgentina.setPrimary(new GunBattery(9, "6"));
+        laArgentina.setSecondary(new GunBattery(4, "4"));
         laArgentina.setTorpedoTubes(new TorpedoTubes(6));
         laArgentina.setBelt( new Armour(3, "belt"));
         laArgentina.setDeck( new Armour(2, "deck"));

@@ -1,9 +1,6 @@
 package com.gphipps.fletcherpratt;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
-import java.io.UnsupportedEncodingException;
+import java.io.*;
 
 /**
  * Reads all the CSVs in the first argument.
@@ -13,11 +10,12 @@ import java.io.UnsupportedEncodingException;
  */
 public class ProcessAll {
 
-    public static void main(String args[]) throws FileNotFoundException, UnsupportedEncodingException {
+    public static void main(String args[]) throws FileNotFoundException, UnsupportedEncodingException, IOException {
         CSVReader reader = new CSVReader();
         File inputDir = new File(args[0]);
         File[] inputCSVFiles = inputDir.listFiles();
         // Find all csv files in dir
+        GunType.initGunTypes(inputDir.getPath() + "/weapons/gunTypes0_5_inch.csv");
 
         File outputRootDir = new File(args[1]);
         outputRootDir.mkdir();
