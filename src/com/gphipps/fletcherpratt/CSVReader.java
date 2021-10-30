@@ -97,7 +97,8 @@ public class CSVReader {
             if( ! klassesSummarised.contains(ship.getKlass()) ) {
               klassesSummarised.add(ship.getKlass());
               String fields = ship.getSummaryLine();
-              summaryPrintWriter.println(fields);
+              summaryPrintWriter.print(fields);
+              summaryPrintWriter.println( "," + ship.getName());
             }
             shipLabelsPrintWriter.print( ship.getKlass() +"," + ship.getName() + "," );
             if( shipLabelsCounter > 4 ) {
