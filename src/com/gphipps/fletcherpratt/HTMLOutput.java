@@ -48,6 +48,10 @@ public class HTMLOutput implements OutputChannel {
           p_end();
         printGunTypes(ship);
         p(); p_end();
+        p();
+        printArmorPenetration(ship, 1, 17);
+        printArmorPenetration(ship, 18, 33);
+        p_end();
 
         // Third line
 
@@ -93,6 +97,14 @@ public class HTMLOutput implements OutputChannel {
         printWriter.println("      td.guns {");
         printWriter.println("        text-align: center;");
         printWriter.println("        font-size: 12px;");
+        printWriter.println("      }");
+        printWriter.println("      th.penetration-header {");
+        printWriter.println("        text-align: center;");
+        printWriter.println("        font-size: 9px;");
+        printWriter.println("      }");
+        printWriter.println("      td.penetration {");
+        printWriter.println("        text-align: center;");
+        printWriter.println("        font-size: 9px;");
         printWriter.println("      }");
         printWriter.println("      td.points {");
         printWriter.println("        text-align: right;");
@@ -146,7 +158,6 @@ public class HTMLOutput implements OutputChannel {
         }
     }
 
-
     private void printGunTypes(Ship ship) {
         printWriter.println("  <table width=\"80% \"cellpadding=\"1\">");
         printWriter.println("    <tr>");
@@ -177,6 +188,39 @@ public class HTMLOutput implements OutputChannel {
         printWriter.println("  </table>");
     }
 
+
+    private void printArmorPenetration(Ship ship, int armorStart, int armorEnd) {
+        printWriter.println("</p> <p>" );
+        printWriter.println("  <table width=\"80% \"cellpadding=\"2\">");
+        printWriter.println("    <tr>");
+        printWriter.println("      <th class=\"guns-header\">Armor:</th>");
+        for( int i = armorStart; i < armorEnd; i++ ) {
+            printWriter.println("      <th class=\"penetration-header\">" + ((double)i)/2 +"\"</th>");
+        }
+        printWriter.println("    </tr>");
+
+        printGunPenetration(ship.getPrimary().getGunType(), armorStart, armorEnd);
+        if( ! ship.getSecondary().isNull()) {
+            printGunPenetration(ship.getSecondary().getGunType(), armorStart, armorEnd);
+        }
+
+        printWriter.println("</table> </p> <p>" );
+    }
+
+    private void printGunPenetration(GunType guntype, int armorStart, int armorEnd) {
+        printWriter.println("    <tr>");
+        printWriter.println("      <td class=\"guns\">" + guntype.getBore() + "\" up to:</td>");
+        for(int i = armorStart; i < armorEnd; i++ ) {
+            // y = m.x +c
+            double c = 1.05 * guntype.getMaxRange();
+            double m = -2.0;
+            double r = (((double)i)/2*m+c);
+            String s = r > 0 ? String.format("%.1f\"", r) : "-";
+            printWriter.println("      <td class=\"penetration\">" + s +"</td>");
+        }
+        printWriter.println("    </tr>");
+    }
+
     private void printGunType(GunType gt, boolean printOvers) {
         int r = gt.getMaxRange();
         printWriter.println("    <tr>");
@@ -187,6 +231,7 @@ public class HTMLOutput implements OutputChannel {
         } else {
             printWriter.println("      <td class=\"guns\">" + "–" + "</th>");
         }
+        // Medium
         printWriter.println("      <td class=\"guns\">" + 3*r/4 + "\"" + "</th>");
         if( printOvers) {
             printWriter.println("      <td class=\"guns\">" + "1/2\"" + "</th>");
