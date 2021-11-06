@@ -81,7 +81,8 @@ public class CSVReader {
         }
 
         // The inner loop that does all the work. Read a ship, write out the log
-        if (!csvRecord.get(0).equals("Name") && !stripQuotes(csvRecord.get(1)).equals("Example") ) {
+        // Ignore comment lines that start with #
+        if (!csvRecord.get(0).equals("Name") && !csvRecord.get(0).startsWith("#") && !stripQuotes(csvRecord.get(1)).equals("Example") ) {
           Iterator<String> it =csvRecord.iterator();
           String[] asArray = new String[NOTES+1];
           int i =0;

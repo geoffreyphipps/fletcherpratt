@@ -225,25 +225,18 @@ public class HTMLOutput implements OutputChannel {
         int r = gt.getMaxRange();
         printWriter.println("    <tr>");
         printWriter.println("      <td class=\"guns\">" + gt.getBore() + "\"</th>");
+        // Long
         printWriter.println("      <td class=\"guns\">" + r + "\"" + "</th>");
-        if( printOvers) {
-            printWriter.println("      <td class=\"guns\">" + "1/4\"" + "</th>");
-        } else {
-            printWriter.println("      <td class=\"guns\">" + "–" + "</th>");
-        }
+        printWriter.println("      <td class=\"guns\">" + "1/4\"" + "</th>");
+
         // Medium
         printWriter.println("      <td class=\"guns\">" + 3*r/4 + "\"" + "</th>");
-        if( printOvers) {
-            printWriter.println("      <td class=\"guns\">" + "1/2\"" + "</th>");
-        } else {
-            printWriter.println("      <td class=\"guns\">" + "–" + "</th>");
-        }
+        printWriter.println("      <td class=\"guns\">" + "1/2\"" + "</th>");
+
+        // Short
         printWriter.println("      <td class=\"guns\">" + r/4 + "\"" + "</th>");
-        if( printOvers) {
-            printWriter.println("      <td class=\"guns\">" + "1\"" + "</th>");
-        } else {
-            printWriter.println("      <td class=\"guns\">" + "–" + "</th>");
-        }
+        printWriter.println("      <td class=\"guns\">" + "1\"" + "</th>");
+
         printWriter.println("      <td class=\"guns\">" + gt.getDamage() + "</th>");
         printWriter.println("      <td class=\"guns\">" + gt.getDamage()/2 + "</th>");
         printWriter.println("    </tr>");
