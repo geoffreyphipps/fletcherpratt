@@ -1,7 +1,7 @@
 Name,Class,Minis,Launched,Rebuilt,Nationality,Type,Primary Number,Primary Bore,Secondary Number,Secondary Bore,Torpedo Tubes,Belt,Deck,Turret,Mines,Aircraft,Speed,Tonnage,Torpedo Class,Main Turrets,Torpedo Tube Layout,Notes
-"Bremen, Leipzig, Hampburg, Berlin, Lübeck, München, Danzig",Bremen,0,1904,1904,German,Light Cruiser,10,4.1,0,0,2,1.5,2,0,0,0,24,3250,C,2F 3P 3S 2A,"1 Port, 1 Stbd, all submerged",
+"Bremen, Leipzig, Hampburg, Berlin, Lübeck, München, Danzig",Bremen,2,1904,1904,German,Light Cruiser,10,4.1,0,0,2,1.5,2,0,0,0,24,3250,C,2F 3P 3S 2A,"1 Port, 1 Stbd, all submerged",
 "Königsberg, Nürnberg, Stuttgart, Stettin",Königsberg,0,1905,1905,German,Light Cruiser,10,4.1,0,0,2,2,2,0,0,0,23,3650,C,2F 3P 3S 2A,"1 Port, 1 Stbd, all submerged",
 "Emden, Dresden",Dresden,0,1907,1907,German,Light Cruiser,10,4.1,0,0,2,2.6,2,0,0,0,24,3650,C,2F 3P 3S 2A,"1 Port, 1 Stbd, all submerged",
 "Magdeburg, Breslau, Strassburg, Stralsund",Magdeburg,0,1912,1912,German,Light Cruiser,12,4.1,0,0,2,3.5,2.0,0,120,0,28,4362,C,2F 4P 4S 2A,"1 Port, 1 Stbd, all submerged",
 #"Strassburg, Stralsund, Breslau",Strassburg,0,1912,1916,German,Light Cruiser,7,5.9,0,0,2,3.5,2.0,0,120,0,28,4362,C,Broadside,"1 Port, 1 Stbd, all submerged",1916 rebuild
-"Wiesbaden, Frankfürt",Wiesbaden,0,1915,1915,German,Light Cruiser,8,5.9,0,0,4,6,1.5,0,120,0,28,5200,C,2F 2P 2S 2A,"2 Port, 2 Stbd, half submerged",
+"Wiesbaden, Frankfürt",Wiesbaden,2,1915,1915,German,Light Cruiser,8,5.9,0,0,4,6,1.5,0,120,0,28,5200,C,2F 2P 2S 2A,"2 Port, 2 Stbd, half submerged",

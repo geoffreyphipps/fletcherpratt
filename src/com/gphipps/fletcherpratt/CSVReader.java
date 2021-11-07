@@ -88,7 +88,7 @@ public class CSVReader {
         // Ignore comment lines that start with #
         if (!csvRecord.get(0).equals("Name") && !csvRecord.get(0).startsWith("#") && !stripQuotes(csvRecord.get(1)).equals("Example") ) {
           Iterator<String> it =csvRecord.iterator();
-          String[] asArray = new String[Fields.NOTES.ordinal()+2];
+          String[] asArray = new String[Fields.NOTES.ordinal()+1];
           int i =0;
           while( it.hasNext()) {
             asArray[i] = it.next();

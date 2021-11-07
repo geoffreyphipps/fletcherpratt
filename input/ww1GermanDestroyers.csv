@@ -1,11 +1,6 @@
 Name,Class,Minis,Launched,Rebuilt,Nationality,Type,Primary Number,Primary Bore,Secondary Number,Secondary Bore,Torpedo Tubes,Belt,Deck,Turret,Mines,Aircraft,Speed,Tonnage,Torpedo Class,Main Turrets,Torpedo Tube Layout,Notes
-
 "G37, G38, G39, G40, G41, G42",G37,0,1913,1913,German,Big Torpedo Boat,3,3.4,0,0,6,0,0,0,24,0,34,1051,B,1F 1W 1A,Center-line,
-
 "S131, S132, S133",S131,0,1916,1916,German,Torpedo Boat Destroyer,3,4,0,0,6,0,0,0,40,0,34,1290,B,1F 1W 1A,Center-line,
-
 "S113, S116",S113,0,1918,1918,German,Torpedo Boat Destroyer,4,5.9,0,0,4,0,0,0,40,0,37,2354,B,1F 1W 1A,Center-line,
-
-"V1, V2, V3, V4",V1,0,1912,1912,German,Big Torpedo Boat,2,3.4,4,2,2,0,0,0,18,0,32,680,B,1F 1A,Center-line,
-
-"V25, V26, V27, V28",V25,0,1914,1914,German,Big Torpedo Boat,3,3.4,6,2,6,0,0,0,24,0,36,900,B,1F 1W 1A,Center-line,
+"V1, V2, V3, V4",V1,4,1912,1912,German,Big Torpedo Boat,2,3.4,4,2,2,0,0,0,18,0,32,680,B,1F 1A,Center-line,
+"V25, V26, V27, V28",V25,4,1914,1914,German,Big Torpedo Boat,3,3.4,6,2,6,0,0,0,24,0,36,900,B,1F 1W 1A,"1P 1S Center-line",

@@ -45,9 +45,7 @@ public class GunType {
                             inches,
                             Integer.parseInt(damage),
                             Integer.parseInt(range)));
-            System.out.println(gunTypes.get(inches));
         }
-
     }
 
     public GunType(String bore, int damage, int maxRange) {
