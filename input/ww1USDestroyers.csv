@@ -1,3 +1,3 @@
-Name,Class,Launched,Rebuilt,Nationality,Type,Primary Number,Primary Bore,Secondary Number,Secondary Bore,Torpedo Tubes,Belt,Deck,Turret,Mines,Aircraft,Speed,Tonnage,Torpedo Class,Main Turrets,Torpedo Tube Layout,Notes
-"Paulding, Drayton, Roe, Terry, Perkins, Sterett",Paulding,1910,1910,USA,Destroyer,5,3,0,0,6,0,0,0,0,0,30,742,B,1F (1P 1S) 1W 1A,Center-line,
-"Sampson, Rowan, Davis, Allen, Wilkes, Shaw",Sampson,1916,1916,USA,Destroyer,4,4,0,0,12,0,0,0,0,0,30,1100,B,1F 1W 1W 1A,"6 Port, 6 Starboard",
+Name,Class,Minis,Launched,Rebuilt,Nationality,Type,Primary Number,Primary Bore,Secondary Number,Secondary Bore,Torpedo Tubes,Belt,Deck,Turret,Mines,Aircraft,Speed,Tonnage,Torpedo Class,Main Turrets,Torpedo Tube Layout,Notes
+"Paulding, Drayton, Roe, Terry, Perkins, Sterett",Paulding,0,1910,1910,USA,Destroyer,5,3,0,0,6,0,0,0,0,0,30,742,B,1F (1P 1S) 1W 1A,Center-line,
+"Sampson, Rowan, Davis, Allen, Wilkes, Shaw",Sampson,0,1916,1916,USA,Destroyer,4,4,0,0,12,0,0,0,0,0,30,1100,B,1F 1W 1W 1A,"6 Port, 6 Starboard",

@@ -15,28 +15,32 @@ public class CSVReader {
 
   private static final char DELIMITER = ',';
 
-  private static final int NAME = 0;
-  private static final int CLASS = 1;
-  private static final int LAUNCHED = 2;
-  private static final int REBUILT = 3;
-  private static final int NATIONALITY = 4;
-  private static final int TYPE = 5;
-  private static final int PRIMARY_NUMBER = 6;
-  private static final int PRIMARY_BORE = 7;
-  private static final int SECONDARY_NUMBER = 8;
-  private static final int SECONDARY_BORE = 9;
-  private static final int TORPEDO_TUBES = 10;
-  private static final int BELT = 11;
-  private static final int DECK =12;
-  private static final int TURRET = 13;
-  private static final int MINES = 14;
-  private static final int AIRCRAFT = 15;
-  private static final int SPEED = 16;
-  private static final int TONNAGE = 17;
-  private static final int TORPEDO_CLASS = 18;
-  private static final int PRIMARY_TURRET_LAYOUT = 19;
-  private static final int TORPEDO_TUBE_LAYOUT = 20;
-  private static final int NOTES = 21;
+  enum Fields {
+//    BASE_1,
+    NAME,
+    CLASS,
+    NUMBER_MINIATURES,
+    LAUNCHED,
+    REBUILT,
+    NATIONALITY,
+    TYPE,
+    PRIMARY_NUMBER,
+    PRIMARY_BORE,
+    SECONDARY_NUMBER,
+    SECONDARY_BORE,
+    TORPEDO_TUBES,
+    BELT,
+    DECK,
+    TURRET,
+    MINES,
+    AIRCRAFT,
+    SPEED,
+    TONNAGE,
+    TORPEDO_CLASS,
+    PRIMARY_TURRET_LAYOUT,
+    TORPEDO_TUBE_LAYOUT,
+    NOTES,
+  }
 
   private File outputDirectory;
 
@@ -84,7 +88,7 @@ public class CSVReader {
         // Ignore comment lines that start with #
         if (!csvRecord.get(0).equals("Name") && !csvRecord.get(0).startsWith("#") && !stripQuotes(csvRecord.get(1)).equals("Example") ) {
           Iterator<String> it =csvRecord.iterator();
-          String[] asArray = new String[NOTES+1];
+          String[] asArray = new String[Fields.NOTES.ordinal()+2];
           int i =0;
           while( it.hasNext()) {
             asArray[i] = it.next();
@@ -127,30 +131,34 @@ public class CSVReader {
    */
   private Ship readShip( String[] sections) throws IOException {
 
-    Ship theShip = new Ship(stripQuotes(sections[NAME]), stripQuotes(sections[CLASS]), sections[LAUNCHED], sections[REBUILT]);
+    Ship theShip = new Ship(stripQuotes(sections[Fields.NAME.ordinal()]), stripQuotes(sections[Fields.CLASS.ordinal()]),
+            sections[Fields.LAUNCHED.ordinal()], sections[Fields.REBUILT.ordinal()]);
 
-    theShip.setNationality( stripQuotes(sections[NATIONALITY]));
-    theShip.setType( stripQuotes(sections[TYPE]));
-    theShip.setPrimary(new GunBattery(toInt(sections[PRIMARY_NUMBER]),sections[PRIMARY_BORE]));
+    theShip.setNationality( stripQuotes(sections[Fields.NATIONALITY.ordinal()]));
+    theShip.setNumberOfMiniatures( toInt(sections[Fields.NUMBER_MINIATURES.ordinal()]));
+    theShip.setType( stripQuotes(sections[Fields.TYPE.ordinal()]));
+    theShip.setPrimary(new GunBattery(toInt(sections[Fields.PRIMARY_NUMBER.ordinal()]),sections[Fields.PRIMARY_BORE.ordinal()]));
 
     // Halve the number of secondaries
-    theShip.setSecondary(new GunBattery(toInt(sections[SECONDARY_NUMBER])/2, sections[SECONDARY_BORE]));
+    theShip.setSecondary(new GunBattery(toInt(sections[Fields.SECONDARY_NUMBER.ordinal()])/2, sections[Fields.SECONDARY_BORE.ordinal()]));
 
-    theShip.setTorpedoTubes(new TorpedoTubes(toInt(sections[TORPEDO_TUBES])));
-    theShip.setBelt(new Armour(toDouble(sections[BELT]), "belt"));
-    theShip.setDeck(new Armour(toDouble(sections[DECK]), "deck"));
-    theShip.setTurret(new Armour(toDouble(sections[TURRET]), "turret"));
-    theShip.setMines(new Mines(toInt(sections[MINES])));
-    theShip.setAircraft(new Aircraft(toInt(sections[AIRCRAFT])));
-    theShip.setSpeed(new Speed(toInt(sections[SPEED])));
-    theShip.setStandardDisplacement(toInt(sections[TONNAGE]));
-    theShip.setTorpedoClass(sections[TORPEDO_CLASS]);
-    theShip.setPrimaryTurretLayout(sections[PRIMARY_TURRET_LAYOUT].replaceAll("\"", ""));
-    if( sections[TORPEDO_TUBE_LAYOUT] != null ) {
-      theShip.setTorpedoTubeLayout(sections[TORPEDO_TUBE_LAYOUT].replaceAll("\"", ""));
+    theShip.setTorpedoTubes(new TorpedoTubes(toInt(sections[Fields.TORPEDO_TUBES.ordinal()])));
+    theShip.setBelt(new Armour(toDouble(sections[Fields.BELT.ordinal()]), "belt"));
+    theShip.setDeck(new Armour(toDouble(sections[Fields.DECK.ordinal()]), "deck"));
+    theShip.setTurret(new Armour(toDouble(sections[Fields.TURRET.ordinal()]), "turret"));
+    theShip.setMines(new Mines(toInt(sections[Fields.MINES.ordinal()])));
+    theShip.setAircraft(new Aircraft(toInt(sections[Fields.AIRCRAFT.ordinal()])));
+    theShip.setSpeed(new Speed(toInt(sections[Fields.SPEED.ordinal()])));
+    theShip.setStandardDisplacement(toInt(sections[Fields.TONNAGE.ordinal()]));
+    theShip.setTorpedoClass(sections[Fields.TORPEDO_CLASS.ordinal()]);
+    int d = Fields.PRIMARY_TURRET_LAYOUT.ordinal();
+    String s = sections[Fields.PRIMARY_TURRET_LAYOUT.ordinal()];
+    theShip.setPrimaryTurretLayout(sections[Fields.PRIMARY_TURRET_LAYOUT.ordinal()].replaceAll("\"", ""));
+    if( sections[Fields.TORPEDO_TUBE_LAYOUT.ordinal()] != null ) {
+      theShip.setTorpedoTubeLayout(sections[Fields.TORPEDO_TUBE_LAYOUT.ordinal()].replaceAll("\"", ""));
     }
-    if( sections[NOTES] != null ) {
-      theShip.setNotes(sections[NOTES].replaceAll("\"", ""));
+    if( sections[Fields.NOTES.ordinal()] != null ) {
+      theShip.setNotes(sections[Fields.NOTES.ordinal()].replaceAll("\"", ""));
     }
 
     return theShip;

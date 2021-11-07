@@ -1,8 +1,8 @@
-Name,Class,Launched,Rebuilt,Nationality,Type,Primary Number,Primary Bore,Secondary Number,Secondary Bore,Torpedo Tubes,Belt,Deck,Turret,Mines,Aircraft,Speed,Tonnage,Torpedo Class,Main Turrets,Torpedo Tube Layout,"Notes"""
-"Delaware, North Dakota",Delaware,1910,1910,USA,Battleship,10,12,14,5,2,11,3,7.5,0,0,20,20200,D,2F 2F 2A 2C 2A,"1 Port, 1 Stbd, all submerged",
-"Florida, Utah",Florida,1911,1911,USA,Battleship,10,12,16,5,2,11,1.5,8.9,0,0,20,21825,D,2F 2F 2A 2C 2A,"1 Port, 1 Stbd, all submerged",
-"Wyoming, Arkansas",Wyoming,1912,1912,USA,Battleship,12,12,21,5,2,11,5,8.9,0,0,20,26000,D,2F 2F 2C 2C 2A 2A,"1 Port, 1 Stbd, all submerged",
-"New York, Texas",New York,1914,1914,USA,Battleship,10,14,21,5,4,12,6,9.9,0,0,20,27000,D,2F 2F 2C 2A 2A,"2 Port, 2 Stbd, all submerged",
-"Nevada, Oklahoma",Nevada,1916,1916,USA,Battleship,10,14,21,5,2,13.5,4.5,9.3,0,0,20,27500,D,3F 2F 2A 3A,"1 Port, 1 Stbd, all submerged",
-"Pennsylvania, Arizona",Pennsylvania,1916,1916,USA,Battleship,12,14,22,5,2,14,6,11.5,0,0,20,31400,D,3F 3F 3A 3A,"1 Port, 1 Stbd, all submerged",
-Lexington,Lexington,1919?,1919?,USA,Battlecruiser,8,16,16,6,8,7,2.25,11,0,0,33,43500,D,2F 2F 2A 2A,"4 Port, 4 Stbd, all submerged",Uncompleted
+Name,Class,Minis,Launched,Rebuilt,Nationality,Type,Primary Number,Primary Bore,Secondary Number,Secondary Bore,Torpedo Tubes,Belt,Deck,Turret,Mines,Aircraft,Speed,Tonnage,Torpedo Class,Main Turrets,Torpedo Tube Layout,"Notes"""
+"Delaware, North Dakota",Delaware,0,1910,1910,USA,Battleship,10,12,14,5,2,11,3,7.5,0,0,20,20200,D,2F 2F 2A 2C 2A,"1 Port, 1 Stbd, all submerged",
+"Florida, Utah",Florida,0,1911,1911,USA,Battleship,10,12,16,5,2,11,1.5,8.9,0,0,20,21825,D,2F 2F 2A 2C 2A,"1 Port, 1 Stbd, all submerged",
+"Wyoming, Arkansas",Wyoming,0,1912,1912,USA,Battleship,12,12,21,5,2,11,5,8.9,0,0,20,26000,D,2F 2F 2C 2C 2A 2A,"1 Port, 1 Stbd, all submerged",
+"New York, Texas",New York,2,1914,1914,USA,Battleship,10,14,21,5,4,12,6,9.9,0,0,20,27000,D,2F 2F 2C 2A 2A,"2 Port, 2 Stbd, all submerged",
+"Nevada, Oklahoma",Nevada,0,1916,1916,USA,Battleship,10,14,21,5,2,13.5,4.5,9.3,0,0,20,27500,D,3F 2F 2A 3A,"1 Port, 1 Stbd, all submerged",
+"Pennsylvania, Arizona",Pennsylvania,0,1916,1916,USA,Battleship,12,14,22,5,2,14,6,11.5,0,0,20,31400,D,3F 3F 3A 3A,"1 Port, 1 Stbd, all submerged",
+Lexington,Lexington,0,1919?,1919?,USA,Battlecruiser,8,16,16,6,8,7,2.25,11,0,0,33,43500,D,2F 2F 2A 2A,"4 Port, 4 Stbd, all submerged",Uncompleted

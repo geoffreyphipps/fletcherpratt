@@ -6,6 +6,7 @@ public class Ship {
 
   private String name;
   private String klass;
+  private int numberOfMiniatures;
   private String launched;
   private String rebuilt;
   private String nationality;
@@ -77,10 +78,10 @@ public class Ship {
   }
 
   /**
-   * Name, Type, Class, Nationality, Displacement, Classic Points, New Defensive Points, Total Primary Damage
+   * Name, Type, Class, Number of Miniatures, Nationality, Displacement, Classic Points, New Defensive Points, Total Primary Damage
    */
   public String getSummaryLine() {
-    return name + "," + klass + "," + nationality + "," + type +  ","  +
+    return name + "," + klass + "," + nationality + "," + type +  ","  + numberOfMiniatures +  ","  +
             primary.getTotalCount() + "," + primary.getBore() + "," +
             secondary.getTotalCount() + "," + secondary.getBore() + "," +
             torpedoTubes.getTotalCount() + "," +
@@ -325,5 +326,13 @@ public class Ship {
 
   public boolean isLeadShipInClass() {
     return name.equals(klass);
+  }
+
+  public int getNumberOfMiniatures() {
+    return numberOfMiniatures;
+  }
+
+  public void setNumberOfMiniatures(int numberOfMiniatures) {
+    this.numberOfMiniatures = numberOfMiniatures;
   }
 }

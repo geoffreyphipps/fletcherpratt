@@ -1,8 +1,8 @@
-Name,Class,Launched,Rebuilt,Nationality,Type,Primary Number,Primary Bore,Secondary Number,Secondary Bore,Torpedo Tubes,Belt,Deck,Turret,Mines,Aircraft,Speed,Tonnage,Torpedo Class,Main Turrets,Torpedo Tube Layout,Notes
-"Minotaur, Shannon, Defence",Minotaur,1908,1908,British,Armoured Cruiser,4,9.2,10,7.5,5,6,1.5,8,0,0,24,14600,C,2F 2A,"2 Port, 2 Stbd, 1 stern, all submerged",
-"Bristol, Glasgow, Gloucester, Liverpool, Newcastle",Bristol,1910,1910,British,Light Cruiser,2,6,10,4,2,0,2,0,0,0,25,4800,C,1F 1A,"1 Port, 1 Stbd, all submerged",
-"Chatham, Dublin, Southampton, Sydney, Melbourne, Brisbane, Weymouth, Yarmouth, Dartmouth, Falmouth",Chatham,1912,1912,British,Light Cruiser,8,6,0,0,2,0,2,0,0,0,26,5400,C,1F (1P 1S) (1P 1S) (1P 1S) 1A,"1 Port, 1 Stbd, all submerged",
-"Cambrian, Canterbury, Castor, Constance",Cambrian,1915,1915,British,Light Cruiser,2,6,8,4,4,3,0,0,0,0,28,3700,C,1F 1 1A,"2 Port, 2 Stbd, deck mount",
-"Arethusa, Aurora, Galatea, Inconstant, Penelope, Phaeton, Royalist, Undaunted",Arethusa,1914,1914,British,Light Cruiser,2,6,6,4,4,3,0,0,0,0,2289,3585,C,1F 1A,"2 Port, 2 Stbd, deck mount",
-"Calliope, Champion",Calliope,1915,1915,British,Light Cruiser,2,6,8,4,2,3,0,0,0,0,28,3650,C,1F 1A,"1 Port, 1 Stbd, all submerged",
-"Centaur, Concord",Centaur,1916,1916,British,Light Cruiser,5,6,0,0,2,3,0,0,0,0,28,3650,C,1F 1C 1C 1C 1A,"1 Port, 1 Stbd, all submerged",
+Name,Class,Minis,Launched,Rebuilt,Nationality,Type,Primary Number,Primary Bore,Secondary Number,Secondary Bore,Torpedo Tubes,Belt,Deck,Turret,Mines,Aircraft,Speed,Tonnage,Torpedo Class,Main Turrets,Torpedo Tube Layout,Notes
+"Minotaur, Shannon, Defence",Minotaur,0,1908,1908,British,Armoured Cruiser,4,9.2,10,7.5,5,6,1.5,8,0,0,24,14600,C,2F 2A,"2 Port, 2 Stbd, 1 stern, all submerged",
+"Bristol, Glasgow, Gloucester, Liverpool, Newcastle",Bristol,0,1910,1910,British,Light Cruiser,2,6,10,4,2,0,2,0,0,0,25,4800,C,1F 1A,"1 Port, 1 Stbd, all submerged",
+"Chatham, Dublin, Southampton, Sydney, Melbourne, Brisbane, Weymouth, Yarmouth, Dartmouth, Falmouth",Chatham,0,1912,1912,British,Light Cruiser,8,6,0,0,2,0,2,0,0,0,26,5400,C,1F (1P 1S) (1P 1S) (1P 1S) 1A,"1 Port, 1 Stbd, all submerged",
+"Cambrian, Canterbury, Castor, Constance",Cambrian,0,1915,1915,British,Light Cruiser,2,6,8,4,4,3,0,0,0,0,28,3700,C,1F 1 1A,"2 Port, 2 Stbd, deck mount",
+"Arethusa, Aurora, Galatea, Inconstant, Penelope, Phaeton, Royalist, Undaunted",Arethusa,0,1914,1914,British,Light Cruiser,2,6,6,4,4,3,0,0,0,0,2289,3585,C,1F 1A,"2 Port, 2 Stbd, deck mount",
+"Calliope, Champion",Calliope,0,1915,1915,British,Light Cruiser,2,6,8,4,2,3,0,0,0,0,28,3650,C,1F 1A,"1 Port, 1 Stbd, all submerged",
+"Centaur, Concord",Centaur,0,1916,1916,British,Light Cruiser,5,6,0,0,2,3,0,0,0,0,28,3650,C,1F 1C 1C 1C 1A,"1 Port, 1 Stbd, all submerged",

@@ -25,7 +25,7 @@ public class ProcessAll {
         File shipLabelsFile = new File(outputRootDir.getPath() +  File.separatorChar +  "fletcher_pratt_ship_labels.csv");
         PrintWriter shipLabelsPrintWriter = new PrintWriter(shipLabelsFile, "UTF8");
         summaryPrintWriter.println(
-                "Name, Class, Nationality, Type, " +
+                "Name, Class, Nationality, Type, Number of Miniatures, " +
                         "Primary Number, Primary Bore, Secondary Number, Secondary Bore, Torpedo Tubes," +
                         "Belt, Deck, Turret, " +
                         "Speed, Displacement, " +
