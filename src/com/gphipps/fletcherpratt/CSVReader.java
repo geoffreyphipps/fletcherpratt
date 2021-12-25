@@ -106,7 +106,7 @@ public class CSVReader {
               summaryPrintWriter.println( "," + ship.getName());
             }
             shipLabelsPrintWriter.print( ship.getKlass() +"," + ship.getName() + "," );
-            if( shipLabelsCounter > 4 ) {
+            if( shipLabelsCounter > 3 ) {
               shipLabelsCounter = 0;
               shipLabelsPrintWriter.println();
             } else {

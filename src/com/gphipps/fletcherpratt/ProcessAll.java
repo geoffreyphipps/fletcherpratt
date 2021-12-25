@@ -30,7 +30,7 @@ public class ProcessAll {
                         "Belt, Deck, Turret, " +
                         "Speed, Displacement, " +
                         "Classic Points, New Defensive Points, Std Primary Damage, Torpedo Damage, Scenario Points, Name");
-        shipLabelsPrintWriter.println("class, name, class, name, class, name, class, name, class, name, class, name");
+        shipLabelsPrintWriter.println("class, name, class, name, class, name, class, name, class, name");
         for( File CSVFile : inputCSVFiles ) {
             if( CSVFile.getPath().endsWith(".csv")) {
                 File outputDir = new File(outputRootDir.getPath() + File.separatorChar + CSVFile.getName().replace(".csv", ""));
