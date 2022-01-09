@@ -42,7 +42,7 @@ public final class GunBattery extends Reducing {
   }
 
   public int getTotalDamage() {
-    return getTotalCount() * gunType.getDamage();
+    return (int) Math.round(1.3 * getTotalCount() * gunType.getDamage());
   }
 
   public boolean isNull() {
