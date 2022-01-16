@@ -140,7 +140,7 @@ public class CSVReader {
     theShip.setPrimary(new GunBattery(toInt(sections[Fields.PRIMARY_NUMBER.ordinal()]),sections[Fields.PRIMARY_BORE.ordinal()]));
 
     // Halve the number of secondaries
-    theShip.setSecondary(new GunBattery(toInt(sections[Fields.SECONDARY_NUMBER.ordinal()])/2, sections[Fields.SECONDARY_BORE.ordinal()]));
+    theShip.setSecondary(new GunBattery(toInt(sections[Fields.SECONDARY_NUMBER.ordinal()]), sections[Fields.SECONDARY_BORE.ordinal()]));
 
     theShip.setTorpedoTubes(new TorpedoTubes(toInt(sections[Fields.TORPEDO_TUBES.ordinal()])));
     theShip.setBelt(new Armour(toDouble(sections[Fields.BELT.ordinal()]), "belt"));

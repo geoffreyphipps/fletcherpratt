@@ -16,7 +16,7 @@ public class CSVOutput implements OutputChannel {
     record( ship.getClassicPoints(),"",ship.getInitialStatus());
   }
 
-  public void footer() {
+  public void closeTablesAndPage(String klassName) {
     printWriter.close();
   }
 

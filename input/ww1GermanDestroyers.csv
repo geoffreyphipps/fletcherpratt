@@ -1,7 +1,7 @@
 Name,Class,Minis,Launched,Rebuilt,Nationality,Type,Primary Number,Primary Bore,Secondary Number,Secondary Bore,Torpedo Tubes,Belt,Deck,Turret,Mines,Aircraft,Speed,Tonnage,Torpedo Class,Main Turrets,Torpedo Tube Layout,Notes
-"G37, G38, G39, G40, G41, G42",G37,4,1913,1913,German,Large Torpedo Boat,3,3.4,0,0,6,0,0,0,24,0,34,1051,B,1F 1W 1A,1S 1P 2CL 2CL,
-"S131, S132, S133",S90,0,1916,1916,German,Large Torpedo Boat,3,4,0,0,6,0,0,0,40,0,34,1290,B,1F 1W 1A,2CL 2CL 2CL,
-"S113, S116",S113,0,1918,1918,German,Large Torpedo Boat,4,5.9,0,0,4,0,0,0,40,0,37,2354,B,1F 1W 1A,2CL 2CL,
+"G37, G38, G39, G40, G41, G42",G37,4,1913,1913,German,Large Torpedo Boat,3,3.4,0,0,6,0,0,0,24,0,34,1051,B,1F 1C 1A,1S 1P 2C 2C,
+"S131, S132, S133",S90,0,1916,1916,German,Large Torpedo Boat,3,4,0,0,6,0,0,0,40,0,34,1290,B,1F 1C 1A,2CL 2C 2C,
+"S113, V116",S113,0,1918,1918,German,Large Torpedo Boat,4,5.9,0,0,4,0,0,0,40,0,37,2354,B,1F 1C 1A,2CL 2CL,
 "V1, V2, V3, V4",V1,4,1912,1912,German,Torpedo Boat,2,3.4,4,2,4,0,0,0,18,0,32,680,B,1F 1A,"2CL 2CL",
-"V25, V26, V27, V28",V25,8,1914,1914,German,Torpedo Boat,3,3.4,6,2,6,0,0,0,24,0,36,900,B,1F 1W 1A,"1P 1S 2CL 2CL",
-"B97, B98, V99, V100, B109, B110, B111, B112",B97,8,1914,1914,German,Torpedo Boat,8,3.4,0,0,6,0,0,0,24,0,36,1374,B,1F 1W 1A,"1P 1S 2CL 2CL",
+"V25, V26, V27, V28",V25,8,1914,1914,German,Torpedo Boat,3,3.4,6,2,6,0,0,0,24,0,36,900,B,1F 1C 1A,"1P 1S 2CL 2CL",
+"B97, B98, V99, V100, B109, B110, B111, B112",B97,8,1914,1914,German,Torpedo Boat,8,3.4,0,0,6,0,0,0,24,0,36,1374,B,1F 1C 1A,"1P 1S 2C 2C",

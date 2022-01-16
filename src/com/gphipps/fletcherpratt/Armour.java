@@ -28,5 +28,9 @@ public class Armour extends Feature {
     public String toString() {
         return new DecimalFormat("##.#").format(thickness) + '"';
     }
-    
+
+    public double round() {
+        return Math.round(2 * thickness) /2.0;
+    }
+
 }

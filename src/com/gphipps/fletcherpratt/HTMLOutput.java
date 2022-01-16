@@ -54,7 +54,8 @@ public class HTMLOutput implements OutputChannel {
         p_end();
 
         // Third line
-
+        // The major table has the damage table on the left, and the ship plan on the right
+        startMajorTable();
         startDamageTable();
     }
 
@@ -84,6 +85,10 @@ public class HTMLOutput implements OutputChannel {
         printWriter.println("      }");
         printWriter.println("      table, th, td {");
         printWriter.println("        border: 1px solid black;");
+        printWriter.println("        border-collapse: collapse;");
+        printWriter.println("      }");
+        printWriter.println("      table.major, td.major {");
+        printWriter.println("        border: 0px solid black;");
         printWriter.println("        border-collapse: collapse;");
         printWriter.println("      }");
         printWriter.println("      th.guns-header-multispan {");
@@ -141,7 +146,7 @@ public class HTMLOutput implements OutputChannel {
         printWriter.print(SP_2 + ship.getPrimaryTurretLayout() );
 
         if( ! ship.getSecondary().isNull()) {
-            printWriter.println(SP_2 + SP_2 + "<b>Secondary: </b>" + ship.getSecondary().getInitialStatus(true) + " Broadside");
+            printWriter.println(SP_2 + SP_2 + "<b>Secondary: </b>" + ship.getSecondary().getInitialStatus(true) + " Casemate");
         }
         p_end();
         p();
@@ -185,7 +190,7 @@ public class HTMLOutput implements OutputChannel {
         if( ! ship.getSecondary().isNull()) {
             printGunType(ship.getSecondary().getGunType(), false);
         }
-        printWriter.println("  </table>");
+        printWriter.println("    </table>");
     }
 
 
@@ -247,8 +252,11 @@ public class HTMLOutput implements OutputChannel {
     }
 
     private void printArmorLine(Ship ship) {
-        printWriter.println("  <b>Armor: </b>Belt " + ship.getBelt() + ",&nbsp;&nbsp; Deck " + ship.getDeck());
+        // round armor to nearest 0.5%
+        printWriter.println("  <b>Armor: </b>Belt " + ship.getBelt().round() + "\" (" +ship.getBelt()+")" +
+                ",&nbsp;&nbsp; Deck " + ship.getDeck().round() + "\" (" +ship.getDeck()+")");
     }
+
 
     private void  printTorpedoDamageLine(Ship ship) {
         printWriter.println("<b>Torpedo Defense:</b> " + ship.getTorpedoClass() );
@@ -274,19 +282,34 @@ public class HTMLOutput implements OutputChannel {
         }
         printWriter.println("    </tr>");
         printWriter.println("  </table>");
+
+    }
+
+    private void startMajorTable() {
+        printWriter.println("  <table width=\"100% \"cellpadding=\"2\" class=\"major\">");
     }
 
     private void startDamageTable() {
-        printWriter.println("  <table width=\"80% \"cellpadding=\"2\">");
+
         printWriter.println("    <tr>");
-        printWriter.println("      <th width=\"15%\">Damage</th>");
-        printWriter.println("      <th width=\"55%\">Status</th>");
-        printWriter.println("      <th width=\"30%\">Loss</th>");
-        printWriter.println("    </tr>");
+        printWriter.println("      <td class=\"major\">");
+        printWriter.println("        <table width=\"100% \"cellpadding=\"2\" class=\"damage\">");
+        printWriter.println("          <tr>");
+        printWriter.println("            <th width=\"15%\">Damage</th>");
+        printWriter.println("            <th width=\"55%\">Status</th>");
+        printWriter.println("            <th width=\"30%\">Loss</th>");
+        printWriter.println("          </tr>");
     }
 
-    public void footer() {
-        printWriter.println("</table>");
+    /**
+     * Also closes off the damage log and "major" tables
+     */
+    public void closeTablesAndPage(String klassName) {
+        printWriter.println("    </table>");
+        printWriter.println("  </td>");
+        printWriter.println("  <td valign=\"top\" align=\"center\" class=\"major\">");
+        printWriter.println("    <img src=\"../images/" + klassName + ".png\" with=\"100\" height=\"236\"/> ");
+        printWriter.println("  </td></tr></table>" );
         printWriter.println("</body>");
         printWriter.println("</html>");
 
@@ -304,11 +327,11 @@ public class HTMLOutput implements OutputChannel {
      * @param field3 Status
      */
     public void record( String field1, String field2, String field3 ) {
-        printWriter.println("    <tr>");
-        printWriter.print("      <td class=\"points\"><b>" + field1 + "</b></td>");
-        printWriter.print("      <td class=\"points\">" + field2 + "</td>");
-        printWriter.print("      <td class=\"points\">" + field3 + "</td>");
-        printWriter.println("    </tr>");
+        printWriter.print("          <tr>");
+        printWriter.print("  <td class=\"points\"><b>" + field1 + "</b></td>");
+        printWriter.print("  <td class=\"points\">" + field2 + "</td>");
+        printWriter.print("  <td class=\"points\">" + field3 + "</td>");
+        printWriter.println(" </tr>");
     }
 
     public void record( long field1, String field2, String field3 ) {
