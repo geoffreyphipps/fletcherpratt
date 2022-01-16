@@ -143,7 +143,11 @@ public class Ship {
     String s = String.format("%,d",totalPoints);
     channel.record( s, "SUNK", "");
 
-    channel.closeTablesAndPage(getKlass());
+    channel.closeMajorTable(getKlass());
+
+    channel.createOrdersLog();
+
+    channel.closePage();
   }
 
   public String getStatusString() {

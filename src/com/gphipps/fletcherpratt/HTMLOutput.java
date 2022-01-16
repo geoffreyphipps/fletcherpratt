@@ -37,9 +37,6 @@ public class HTMLOutput implements OutputChannel {
 
         p();
         printArmorLine(ship);
-        p_end();
-
-        p();
         printTorpedoDamageLine(ship);
         p_end();
 
@@ -80,6 +77,11 @@ public class HTMLOutput implements OutputChannel {
         printWriter.println("        font-size: 12px;");
         printWriter.println("        text-align: left;");
         printWriter.println("      }");
+
+        printWriter.println("      h1 {");
+        printWriter.println("        font-size: 18px;");
+        printWriter.println("      }");
+
         printWriter.println("      th {");
         printWriter.println("        text-align: right;");
         printWriter.println("      }");
@@ -87,10 +89,12 @@ public class HTMLOutput implements OutputChannel {
         printWriter.println("        border: 1px solid black;");
         printWriter.println("        border-collapse: collapse;");
         printWriter.println("      }");
+
         printWriter.println("      table.major, td.major {");
         printWriter.println("        border: 0px solid black;");
         printWriter.println("        border-collapse: collapse;");
         printWriter.println("      }");
+
         printWriter.println("      th.guns-header-multispan {");
         printWriter.println("        text-align: center;");
         printWriter.println("        font-size: 12px;");
@@ -103,17 +107,40 @@ public class HTMLOutput implements OutputChannel {
         printWriter.println("        text-align: center;");
         printWriter.println("        font-size: 12px;");
         printWriter.println("      }");
+
         printWriter.println("      th.penetration-header {");
         printWriter.println("        text-align: center;");
         printWriter.println("        font-size: 9px;");
         printWriter.println("      }");
+
         printWriter.println("      td.penetration {");
         printWriter.println("        text-align: center;");
         printWriter.println("        font-size: 9px;");
         printWriter.println("      }");
+
         printWriter.println("      td.points {");
         printWriter.println("        text-align: right;");
         printWriter.println("        font-size: 12px;");
+        printWriter.println("      }");
+
+        printWriter.println("      table.orders {");
+        printWriter.println("        padding-top: 30px;");
+        printWriter.println("        border: 1px solid black;");
+        printWriter.println("        border-collapse: collapse;");
+        printWriter.println("      }");
+
+        printWriter.println("      th.orders {");
+        printWriter.println("        font-size: 12px;");
+        printWriter.println("        text-align: center;");
+        printWriter.println("        border: 1px solid black;");
+        printWriter.println("        border-collapse: collapse;");
+        printWriter.println("      }");
+
+        printWriter.println("      td.orders {");
+        printWriter.println("        text-align: center;");
+        printWriter.println("        border: 1px solid black;");
+        printWriter.println("        border-collapse: collapse;");
+        printWriter.println("        font-size: 10px;");
         printWriter.println("      }");
         printWriter.println("    </style>");
 
@@ -259,11 +286,11 @@ public class HTMLOutput implements OutputChannel {
 
 
     private void  printTorpedoDamageLine(Ship ship) {
-        printWriter.println("<b>Torpedo Defense:</b> " + ship.getTorpedoClass() );
+//        printWriter.println("<b>Torpedo Defense:</b> " + ship.getTorpedoClass() );
         printWriter.println("</p> <p>" );
         printWriter.println("  <table width=\"80% \"cellpadding=\"2\">");
         printWriter.println("    <tr>");
-        printWriter.println("      <th width=\"20%\" class=\"guns-header\">1st Hit</th>");
+        printWriter.println("      <th width=\"20%\" class=\"guns-header\">1st Torp Hit</th>");
         printWriter.println("      <th width=\"20%\" class=\"guns-header\">2nd Hit</th>");
         printWriter.println("      <th width=\"20%\" class=\"guns-header\">3rd Hit</th>");
         printWriter.println("      <th width=\"20%\" class=\"guns-header\">4th Hit</th>");
@@ -290,7 +317,6 @@ public class HTMLOutput implements OutputChannel {
     }
 
     private void startDamageTable() {
-
         printWriter.println("    <tr>");
         printWriter.println("      <td class=\"major\">");
         printWriter.println("        <table width=\"100% \"cellpadding=\"2\" class=\"damage\">");
@@ -302,14 +328,17 @@ public class HTMLOutput implements OutputChannel {
     }
 
     /**
-     * Also closes off the damage log and "major" tables
+     * Closes off the damage log and "major" tables
      */
-    public void closeTablesAndPage(String klassName) {
+    public void closeMajorTable(String klassName) {
         printWriter.println("    </table>");
         printWriter.println("  </td>");
         printWriter.println("  <td valign=\"top\" align=\"center\" class=\"major\">");
         printWriter.println("    <img src=\"../images/" + klassName + ".png\" with=\"100\" height=\"236\"/> ");
-        printWriter.println("  </td></tr></table>" );
+        printWriter.println("  </td></tr></table>");
+    }
+
+    public void closePage() {
         printWriter.println("</body>");
         printWriter.println("</html>");
 
@@ -336,6 +365,68 @@ public class HTMLOutput implements OutputChannel {
 
     public void record( long field1, String field2, String field3 ) {
         record(String.valueOf(field1), field2, field3);
+    }
+
+    /**
+     * The table for player's movement and firing orders.
+     * width="5%"
+     * width="30%"
+     *
+     printWriter.println("      <td class=\"orders\">Primary 41\" up by 1/2\" in pairs</td>");
+     */
+    @Override
+    public void createOrdersLog() {
+        printWriter.println("  <p></p>");
+        printWriter.println("  <table width=\"100% \"cellpadding=\"2\" class=\"orders\">");
+        printWriter.println("    <tr>");
+        printWriter.println("      <th class=\"orders\" colspan=\"1\" rowspan=\"2\">GT</th>");
+        printWriter.println("      <th class=\"orders\" colspan=\"3\">Movement</th>");
+        printWriter.println("      <th class=\"orders\" colspan=\"1\" rowspan=\"2\" >Torpedo Launches</th>");
+        printWriter.println("      <th class=\"orders\" colspan=\"2\" >Gunnery</th>");
+        printWriter.println("    </tr>");
+
+        printWriter.println("    <tr>");
+        printWriter.println("      <th class=\"orders\" colspan=\"1\">Initial</th>");
+        printWriter.println("      <th class=\"orders\" colspan=\"1\">Turn</th>");
+        printWriter.println("      <th class=\"orders\" colspan=\"1\">Final</th>");
+        printWriter.println("      <th class=\"orders\" colspan=\"1\">Primaries</th>");
+        printWriter.println("      <th class=\"orders\" colspan=\"1\">Secondaries</th>");
+        printWriter.println("    </tr>");
+
+        printWriter.println("    <tr>");
+        printWriter.println("      <td class=\"orders\">Ex. 1</td>");
+        printWriter.println("      <td class=\"orders\">6kt</td>");
+        printWriter.println("      <td class=\"orders\">2kt Stbd</td>");
+        printWriter.println("      <td class=\"orders\">12kt</td>");
+        printWriter.println("      <td class=\"orders\">None – Turned</td>");
+        printWriter.println("      <td class=\"orders\">None – Turned</td>");
+        printWriter.println("      <td class=\"orders\">None – Turned</td>");
+        printWriter.println("    </tr>");
+
+        printWriter.println("    <tr>");
+        printWriter.println("      <td class=\"orders\">Ex. 2</td>");
+        printWriter.println("      <td class=\"orders\">20kt</td>");
+        printWriter.println("      <td class=\"orders\">–</td>");
+        printWriter.println("      <td class=\"orders\">–</td>");
+        printWriter.println("      <td class=\"orders\">4 shots: first on tack, then right every 2\"</td>");
+        printWriter.println("      <td class=\"orders\">At ship 1: 26\" up by 1/2\", by pairs</td>");
+        printWriter.println("      <td class=\"orders\">At ship 2: 12\" up by 1/4\", by singles</td>");
+        printWriter.println("    </tr>");
+
+        for( int i = 0; i < 20; i++ ) {
+            printWriter.println("    <tr>");
+            // Need nbsp for it to appear
+            printWriter.println("      <td class=\"orders\">&nbsp;</td>");
+            printWriter.println("      <td class=\"orders\"></td>");
+            printWriter.println("      <td class=\"orders\"></td>");
+            printWriter.println("      <td class=\"orders\"></td>");
+            printWriter.println("      <td class=\"orders\"></td>");
+            printWriter.println("      <td class=\"orders\"></td>");
+            printWriter.println("      <td class=\"orders\"></td>");
+            printWriter.println("    </tr>");
+        }
+        printWriter.println("</table>");
+
     }
 
 }

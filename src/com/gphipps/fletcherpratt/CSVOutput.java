@@ -16,7 +16,9 @@ public class CSVOutput implements OutputChannel {
     record( ship.getClassicPoints(),"",ship.getInitialStatus());
   }
 
-  public void closeTablesAndPage(String klassName) {
+  public void closeMajorTable(String klassName) {
+  }
+  public void closePage() {
     printWriter.close();
   }
 
@@ -33,6 +35,11 @@ public class CSVOutput implements OutputChannel {
   }
   public void record( long field1, String field2, String field3 ) {
     record( String.valueOf( field1), field2, field3 );
+  }
+
+  @Override
+  public void createOrdersLog() {
+    // TODO This is only used for testing, so do what here?
   }
 
   public String getFieldSeparator() {
