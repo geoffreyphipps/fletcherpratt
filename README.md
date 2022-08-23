@@ -1,7 +1,24 @@
 
 This program produces ship files for use with a modified version
-of the Fletcher Pratt Naval wargame rules. The main modification is
-that all damage is divided by 40 to simplify the arithmetic.
+of the Fletcher Pratt Naval wargame rules. I am planning to issue 
+my own derivative, provisionally named "Range Rate."
+
+The main modification is  that all damage is divided by 40 to simplify
+the book-keeping during the game. I also changed the formula
+used to calculate the value of a ship. After a number of games
+it became clear that scenario balance depends heavily on the maximum 
+damage that a ship can inflict each turn. That number is the "Balance Points"
+value on the ship log. A balanced scenario should have rougly the same number of
+balance points on each side. The "Classic Points" are the original Fletcher Pratt
+values, "Defensive" is a variant that I think produces more balanced games.
+
+External Dependencies
+=====================
+
+This uses two external libraries, which you need to download separately:
+1. commons-csv-1.9.0.jar
+2. commons-csv-1.9.0-sources.jar
+
 
 Producing the Logs
 ==================
@@ -21,6 +38,15 @@ ship into that subdirectory.
 This project uses the commons-csv package from apache, download it 
 from apache.org,
 probably https://commons.apache.org/proper/commons-csv/download_csv.cgi
+
+Running the Program
+===================
+
+The main class is: com.gphipps.fletcherpratt.ProcessAll
+The program arguments are  "$ROOT/fletcherpratt/input"  "$ROOT/fletcherpratt/output"
+where $ROOT is MacOS/Linux syntax for a variable that holds the name of the directory containing this package
+For example:
+
 
 Input Data Files
 ================
